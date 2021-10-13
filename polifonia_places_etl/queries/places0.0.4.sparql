@@ -125,10 +125,41 @@ CONSTRUCT {
                     xyz:artists ?artistList .
                     # artist
                     ?artistList ?li ?artist .
+                    ?artist xyz:name%5Firi ?artistID .
+        }
+        UNION
+        {
+            # Recordings with artists
+            ?recording  xyz:track%5Fid ?recordingID ;
+                    xyz:artists ?artistList .
+                    # artist
+                    ?artistList ?li ?artist .
+                    ?artist xyz:name%5Firi ?artistID ;
+                            xyz:name ?artistLabel .
+        }
+        UNION
+        {
+            # Recordings with artists
+            ?recording  xyz:track%5Fid ?recordingID ;
+                    xyz:artists ?artistList .
+                    # artist
+                    ?artistList ?li ?artist .
+                    ?artist xyz:name%5Firi ?artistID ;
+                            xyz:name ?artistLabel ;
+                            xyz:country ?artistBirthPlaceCode .
+        }
+        UNION
+        {
+            # Recordings with artists and artistLabel and artistBirthPlace and artistCareerStartPlace
+            ?recording  xyz:track%5Fid ?recordingID ;
+                    xyz:artists ?artistList .
+                    # artist
+                    ?artistList ?li ?artist .
                     ?artist xyz:name%5Firi ?artistID ;
                           xyz:name ?artistLabel ;
                           xyz:country ?artistBirthPlaceCode ;
                           xyz:start%5Fplace ?artistCareerStartPlace .
+
         }
 
         UNION        
@@ -207,7 +238,7 @@ CONSTRUCT {
     BIND(IRI(CONCAT( STR(pr:) , "PhysicalSite/", ENCODE_FOR_URI(?placeID))) AS ?placeIRI)
     BIND(IRI(CONCAT( STR(pr:) , "Place/", ENCODE_FOR_URI(?artistCareerStartPlace))) AS ?artistCareerStartPlaceIRI)
     BIND(IRI(CONCAT( STR(pr:) , "Address/", ENCODE_FOR_URI(?fullAddress))) AS ?addressIRI)
-    BIND(IRI(CONCAT( STR(pr:) , "Geometry/", ENCODE_FOR_URI(?lat), "_", ENCODE_FOR_URI(?long))) AS ?geometryIRI)
+    BIND(IRI(CONCAT( STR(pr:) , "Geometry/", ENCODE_FOR_URI(REPLACE(?lat, "\\.", "_")), "_", ENCODE_FOR_URI(REPLACE(?long, "\\.", "_")))) AS ?geometryIRI)
     # individuals IRIs from string IRI
     BIND(IRI(?sessionType) AS ?sessionTypeIndividualIRI)
 
