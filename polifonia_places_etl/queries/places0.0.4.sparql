@@ -39,7 +39,7 @@ CONSTRUCT {
     # Agent
     ?artistIRI  a core:Agent ; 
                 rdfs:label ?artistLabel ;
-                core:hasBirthPlaceCode ?artistBirthPlaceCodeIRI ;
+                core:hasBirthPlace ?artistBirthPlaceCodeIRI ;
                 core:hasStartCareerPlace ?artistCareerStartPlaceIRI .
 
 
@@ -66,12 +66,16 @@ CONSTRUCT {
               core:hasAddress ?addressIRI ;
               core:hasGeometry ?geometryIRI .
 
-    ?artistCareerStartPlaceIRI a core:PhysicalSite ;
+    ?artistCareerStartPlaceIRI a core:Place ;
             rdfs:label ?artistCareerStartPlace .
+
+	?artistBirthPlaceCodeIRI a core:Country ;
+		rdfs:label ?artistBirthPlaceCodeIRI .
+    
 
     # Address
     ?addressIRI a core:Address ;
-                rdfs:label ?fullAddress .
+                rdfs:label ?fullAddress ;
                 core:fullAddress ?fullAddress .
 
     # Geometry
@@ -196,14 +200,14 @@ CONSTRUCT {
     BIND(IRI(CONCAT( STR(pr:) , "Recording/", ENCODE_FOR_URI(?recordingID))) AS ?recordingIRI)
     BIND(IRI(CONCAT( STR(pr:) , "Title/", ENCODE_FOR_URI(?titleID))) AS ?titleIRI) # ENCODE_FOR_URI fix issues with unicode char in strings e.g. "wheni\u00e2\u20ac\u2122msixty\u00e2\u20ac\u0090four"
     BIND(IRI(CONCAT( STR(pr:) , "Agent/", ENCODE_FOR_URI(?artistID))) AS ?artistIRI)
-    BIND(IRI(CONCAT( STR(pr:) , "CountryCode/", ENCODE_FOR_URI(?artistBirthPlaceCode))) AS ?artistBirthPlaceCodeIRI)
+    BIND(IRI(CONCAT( STR(pr:) , "Country/", ENCODE_FOR_URI(?artistBirthPlaceCode))) AS ?artistBirthPlaceCodeIRI)
     BIND(IRI(CONCAT( STR(pr:) , "RecordingProcess/", ENCODE_FOR_URI(?recordingID))) AS ?recordingProcessIRI)
     BIND(IRI(CONCAT( STR(pr:) , "Session/", ENCODE_FOR_URI(?sessionID))) AS ?sessionIRI)
-    BIND(IRI(CONCAT( STR(pr:) , "TimeInterval/", ENCODE_FOR_URI(?sessionID))) AS ?timeIntervalIRI)
-    BIND(IRI(CONCAT( STR(pr:) , "Place/", ENCODE_FOR_URI(?placeID))) AS ?placeIRI)
+    BIND(IRI(CONCAT( STR(pr:) , "TimeInterval/", ENCODE_FOR_URI(?startTime), "_", ENCODE_FOR_URI(?endTime))) AS ?timeIntervalIRI)
+    BIND(IRI(CONCAT( STR(pr:) , "PhysicalSite/", ENCODE_FOR_URI(?placeID))) AS ?placeIRI)
     BIND(IRI(CONCAT( STR(pr:) , "Place/", ENCODE_FOR_URI(?artistCareerStartPlace))) AS ?artistCareerStartPlaceIRI)
-    BIND(IRI(CONCAT( STR(pr:) , "Address/", ENCODE_FOR_URI(?placeID))) AS ?addressIRI)
-    BIND(IRI(CONCAT( STR(pr:) , "Geometry/", ENCODE_FOR_URI(?placeID))) AS ?geometryIRI)
+    BIND(IRI(CONCAT( STR(pr:) , "Address/", ENCODE_FOR_URI(?fullAddress))) AS ?addressIRI)
+    BIND(IRI(CONCAT( STR(pr:) , "Geometry/", ENCODE_FOR_URI(?lat), "_", ENCODE_FOR_URI(?long))) AS ?geometryIRI)
     # individuals IRIs from string IRI
     BIND(IRI(?sessionType) AS ?sessionTypeIndividualIRI)
 
