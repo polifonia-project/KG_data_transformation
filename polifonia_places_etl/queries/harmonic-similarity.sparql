@@ -1,0 +1,181 @@
+# Query to extract data from preprocessed file with places related to Music domain
+# and build a Knowledge Graph according to Polifonia places ontology, using sparql.anything
+#
+# from following datasets:
+#      -
+#      -
+#
+# Raw file: https://raw.githubusercontent.com/polifonia-project/sonar2021_demo/datasets/places/places.json
+# 
+# Polifonia KG ontology: https://github.com/polifonia-project/sonar2021_demo/issues/14
+
+
+
+# POLIFONIA prefixes
+PREFIX core:    <https://w3id.org/polifonia/ON/core/> 
+PREFIX mp:      <https://w3id.org/polifonia/ON/musical-performance/>
+PREFIX mc:      <https://w3id.org/polifonia/ON/musical-composition/>
+PREFIX mf:      <https://w3id.org/polifonia/ON/musical-feature/>
+PREFIX cm:      <https://w3id.org/polifonia/ON/comparative-measure/>
+PREFIX rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs:    <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX pr:      <https://w3id.org/polifonia/resource/>
+
+# SPARQL anything prefixes
+PREFIX fx:  <http://sparql.xyz/facade-x/ns/>
+PREFIX xyz: <http://sparql.xyz/facade-x/data/>
+
+
+CONSTRUCT { 
+
+    # Recording
+    ?recordingAIRI   a mp:Recording ;
+                    mf:hasChordProgression ?chordProgressionAIRI ;
+                    cm:isHarmonicallySimilarTo ?RecordingBIRI .
+
+    ?RecordingBIRI a mp:Recording ;
+                    mf:hasChordProgression ?chordProgressionBIRI ;
+                    cm:isHarmonicallySimilarTo ?RecordingAIRI .
+
+    # ChordProgression
+    ?chordProgressionAIRI   a mf:ChordProgression ;
+                    mf:isChordProgressionOf ?recordingAIRI .
+
+    ?chordProgressionBIRI   a mf:ChordProgression ;
+                    mf:isChordProgressionOf ?recordingBIRI .
+
+    # HarmonicSimilaritySituation
+    ?HarmonicSimSitIRI   a cm:HarmonicSimSit ;
+                    cm:involvesRecording ?recordingAIRI ;
+                    cm:involvesRecording ?recordingBIRI ;
+                    cm:involvesChordProgression ?chordProgressionAIRI ;
+                    cm:involvesChordProgression ?chordProgressionAIRI ;
+                    cm:hasSimScore ?SimScoreIRI ;
+                    cm:hasSimFunction ?simFunction ;
+                    cm:hasEncoding ?encoding .
+
+}
+    WHERE {
+
+    SERVICE <x-sparql-anything:> {
+
+        # location for json preprocessed file
+        fx:properties fx:location "data/harmonic_similarities.json"  ;
+        fx:media-type "application/json" ;
+        fx:blank-nodes false    .
+
+
+        # UNION pattern to avoid nested OPTIONAL complexity, causing timeout issues
+
+        {
+            # Recording with just ID
+            ?recording  xyz:track%5FA%5Fid ?recordingAID .
+        }
+
+        UNION
+        {
+            # Recording with youtube ID
+            ?recording  xyz:track%5Fid ?recordingID ;
+                        xyz:youtube%5Fid ?youtubeID .
+        } 
+        UNION
+        {
+            # Recording with title label and title ID
+            ?recording  xyz:track%5Fid ?recordingID ;
+                        xyz:title ?titleLabel ;
+                        xyz:title%5Ffor%5Firi ?titleID .
+        }
+        UNION
+        {
+            # Recordings with artists
+            ?recording  xyz:track%5Fid ?recordingID ;
+                    xyz:artists ?artistList .
+                    # artist
+                    ?artistList ?li ?artist .
+                    ?artist xyz:name%5Firi ?artistID ;
+                          xyz:name ?artistLabel ;
+                          xyz:country ?artistBirthPlaceCode ;
+                          xyz:start%5Fplace ?artistCareerStartPlace .
+        }
+
+        UNION        
+        {
+            # Recordings with Sessions
+            ?recording  xyz:track%5Fid ?recordingID ;
+                    xyz:recording%5Fplaces ?recordingSessionList .
+                    # Session
+                    ?recordingSessionList ?li ?recordingSession .
+                    ?recordingSession xyz:session%5Fid ?sessionID ;
+                          xyz:session%5Ftype ?sessionType ;
+                          xyz:place ?place ;
+                          xyz:begin ?startTime ;
+                          xyz:end ?endTime .
+        }
+        UNION
+        {
+            # Recordings with Session and session Places
+            ?recording  xyz:track%5Fid ?recordingID ;
+                    xyz:recording%5Fplaces ?recordingSessionList .
+
+            # Session
+            ?recordingSessionList ?li ?recordingSession .
+            ?recordingSession xyz:session%5Fid ?sessionID ;
+                          xyz:session%5Ftype ?sessionType ;
+                          xyz:place ?place ;
+                          xyz:begin ?startTime ;
+                          xyz:end ?endTime .
+
+            # PhysicalSite
+            ?place  xyz:id ?placeID .        
+        }
+        UNION
+        {
+            # Recordings with Session and session Places, Geometries and labels
+
+            ?recording  xyz:track%5Fid ?recordingID ;
+                    xyz:recording%5Fplaces ?recordingSessionList .
+
+            # Session
+            ?recordingSessionList ?li ?recordingSession .
+            ?recordingSession xyz:session%5Fid ?sessionID ;
+                          xyz:session%5Ftype ?sessionType ;
+                          xyz:place ?place ;
+                          xyz:begin ?startTime ;
+                          xyz:end ?endTime .
+        
+        
+
+            # PhysicalSite
+            ?place  xyz:id ?placeID ;
+                    xyz:name ?placeLabel ;
+                    xyz:address ?fullAddress ;
+                    xyz:coordinates ?coordinates .
+        
+
+
+            # Geometry
+            ?coordinates xyz:latitude ?lat ;
+                         xyz:longitude ?long .
+
+        }
+
+    }
+
+
+
+    # generate resources IRIs from string IDs
+    BIND(IRI(CONCAT( STR(pr:) , "Recording/", ENCODE_FOR_URI(?recordingID))) AS ?recordingIRI)
+    BIND(IRI(CONCAT( STR(pr:) , "Title/", ENCODE_FOR_URI(?titleID))) AS ?titleIRI) # ENCODE_FOR_URI fix issues with unicode char in strings e.g. "wheni\u00e2\u20ac\u2122msixty\u00e2\u20ac\u0090four"
+    BIND(IRI(CONCAT( STR(pr:) , "Agent/", ENCODE_FOR_URI(?artistID))) AS ?artistIRI)
+    BIND(IRI(CONCAT( STR(pr:) , "Country/", ENCODE_FOR_URI(?artistBirthPlaceCode))) AS ?artistBirthPlaceCodeIRI)
+    BIND(IRI(CONCAT( STR(pr:) , "RecordingProcess/", ENCODE_FOR_URI(?recordingID))) AS ?recordingProcessIRI)
+    BIND(IRI(CONCAT( STR(pr:) , "Session/", ENCODE_FOR_URI(?sessionID))) AS ?sessionIRI)
+    BIND(IRI(CONCAT( STR(pr:) , "TimeInterval/", ENCODE_FOR_URI(?startTime), "_", ENCODE_FOR_URI(?endTime))) AS ?timeIntervalIRI)
+    BIND(IRI(CONCAT( STR(pr:) , "PhysicalSite/", ENCODE_FOR_URI(?placeID))) AS ?placeIRI)
+    BIND(IRI(CONCAT( STR(pr:) , "Place/", ENCODE_FOR_URI(?artistCareerStartPlace))) AS ?artistCareerStartPlaceIRI)
+    BIND(IRI(CONCAT( STR(pr:) , "Address/", ENCODE_FOR_URI(?fullAddress))) AS ?addressIRI)
+    BIND(IRI(CONCAT( STR(pr:) , "Geometry/", ENCODE_FOR_URI(?lat), "_", ENCODE_FOR_URI(?long))) AS ?geometryIRI)
+    # individuals IRIs from string IRI
+    BIND(IRI(?sessionType) AS ?sessionTypeIndividualIRI)
+
+} 
