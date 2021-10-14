@@ -1,14 +1,9 @@
-# Query to extract data from preprocessed file with places related to Music domain
-# and build a Knowledge Graph according to Polifonia places ontology, using sparql.anything
+# Query to extract data from preprocessed file with harmonic similarity related to Music domain
+# and build a Knowledge Graph according to Polifonia ontology network, using sparql.anything
 #
-# from following datasets:
-#      -
-#      -
-#
-# Raw file: https://raw.githubusercontent.com/polifonia-project/sonar2021_demo/datasets/places/places.json
+# Raw file:
 # 
 # Polifonia KG ontology: https://github.com/polifonia-project/sonar2021_demo/issues/14
-
 
 
 # POLIFONIA prefixes
@@ -31,12 +26,12 @@ CONSTRUCT {
     # Recording
     ?recordingAIRI   a mp:Recording ;
                     mf:hasChordProgression ?chordProgressionAIRI ;
-                    cm:isHarmonicallySimilarTo ?RecordingBIRI ;
+                    cm:isHarmonicallySimilarTo ?recordingBIRI ;
                     cm:isInvolvedinHarmonicSimilarity ?harmonicSimIRI .
 
     ?recordingBIRI a mp:Recording ;
                     mf:hasChordProgression ?chordProgressionBIRI ;
-                    cm:isHarmonicallySimilarTo ?RecordingAIRI ;
+                    cm:isHarmonicallySimilarTo ?recordingAIRI ;
                     cm:isInvolvedinHarmonicSimilarity ?harmonicSimIRI .
 
     # ChordProgression
@@ -72,15 +67,15 @@ CONSTRUCT {
 
     SERVICE <x-sparql-anything:> {
 
-        fx:properties fx:location "data/harmonic_sym.json"  ;
+        fx:properties fx:location "data/harm_sym.json"  ;
         fx:media-type "application/json" ;
         fx:blank-nodes false    .
 
         
             # Recording with just ID
-            ?similarity xyz:harm%5Fsim%5Fid ?hasSimID ;
-                        xyz:recordingAIRI ?recordingAIRI ;
-                        xyz:recordingBIRI ?recordingBIRI ;
+            ?similarity xyz:harm%5Fsim%5Fid ?harSimID ;
+                        xyz:recordingAid ?recordingAid ;
+                        xyz:recordingBid ?recordingBid ;
                         xyz:compSimScore ?simScore ;
                         xyz:cp%5Fmatches ?cpMatchesList .
 
@@ -99,16 +94,15 @@ CONSTRUCT {
                             xyz:start ?beginCPB ;
                             xyz:end ?endCPB .
             
-    } .
+    } 
 
 
     # generate resources IRIs from string IDs
+    BIND(IRI(CONCAT( STR(pr:) , "Recording/", ENCODE_FOR_URI(?recordingAid))) AS ?recordingAIRI)
+    BIND(IRI(CONCAT( STR(pr:) , "Recording/", ENCODE_FOR_URI(?recordingBid))) AS ?recordingBIRI)
     BIND(IRI(CONCAT( STR(pr:) , "ChordProgression/", ENCODE_FOR_URI(?chordProgressionAid))) AS ?chordProgressionAIRI)
     BIND(IRI(CONCAT( STR(pr:) , "ChordProgression/", ENCODE_FOR_URI(?chordProgressionBid))) AS ?chordProgressionBIRI)
-    BIND(IRI(CONCAT( STR(pr:) , "HarmonicSimilarity/", ENCODE_FOR_URI(?harSimID))) AS ?harSimIRI)
+    BIND(IRI(CONCAT( STR(pr:) , "HarmonicSimilarity/", ENCODE_FOR_URI(?harSimID))) AS ?harmonicSimIRI)
 
-    # individuals IRIs from string IRI
-    BIND(IRI(?recordingAIRI) AS ?recordingAIRI)
-    BIND(IRI(?recordingBIRI) AS ?recordingBIRI)
 
 } 
