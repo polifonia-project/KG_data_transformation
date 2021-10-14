@@ -77,7 +77,7 @@ CONSTRUCT {
 
             ?cpMatchesList ?li ?cpMatch .
 
-            ?cpMatch xyz:cp%5Fid ?cpMatchId ;
+            ?cpMatch xyz:cp%5Fmatch%5Fid ?cpMatchId ;
                     xyz:cpA ?chordProgressionA ;
                     xyz:cpB ?chordProgressionB ;
                     xyz:humanSimScore ?humanSimScore .
