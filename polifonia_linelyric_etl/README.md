@@ -1,6 +1,6 @@
-## Polifonia KG Places ETL
+## Polifonia KG Line lyric-specific Similarity ETL
 
-Here you find code to produce Polifonia KG places related triples.
+Here you find code to produce Polifonia KG line lyric specific related triples.
 
 For the mapping from raw data to RDF is used [sparql.anything](https://github.com/SPARQL-Anything/sparql.anything).
 Please see relative project site for installation and configuration.
