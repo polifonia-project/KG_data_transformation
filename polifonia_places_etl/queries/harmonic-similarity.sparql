@@ -62,16 +62,36 @@ CONSTRUCT {
 
     SERVICE <x-sparql-anything:> {
 
-        fx:properties fx:location "data/harmonic-sym.csv"  ;
-        fx:media-type "text/csv" ;
-        fx:csv.headers true ;  
+        fx:properties fx:location "data/harmonic_sym.json"  ;
+        fx:media-type "application/json" ;
         fx:blank-nodes false    .
 
-        ?row xyz:recordingA ?recordingA ;
-             xyz:recordingB ?recordingB ; 
-             xyz:chordProgressionA ?chordProgressionA ;
-             xyz:chordProgressionB ?chordProgressionB ; 
-             xyz:simScore ?simScore .
+
+        # UNION pattern to avoid nested OPTIONAL complexity, causing timeout issues
+        # 
+        #   { ?recording xyz:track_id ?recordingID . } UNION { ?recording  xyz:track_id ?recordingID ; xyz:youtube_id ?youtubeID . }
+        #       should be equivalent to:
+        #   { ?recording  xyz:track_id ?recordingID . OPTIONAL { ?recording xyz:youtube_id ?youtubeID . } }
+        #       but faster to resolve
+
+
+        {
+            # Recording with just ID
+            ?recording  xyz:track%5Fid ?recordingID .
+        }
+        UNION
+        {
+            # Recording with youtube ID
+            ?recording  xyz:track%5Fid ?recordingID ;
+                        xyz:youtube%5Fid ?youtubeID .
+        } 
+        UNION
+        {
+            # Recording with title label and title ID
+            ?recording  xyz:track%5Fid ?recordingID ;
+                        xyz:title ?titleLabel ;
+                        xyz:title%5Ffor%5Firi ?titleID .
+        }
 
     } .
 
