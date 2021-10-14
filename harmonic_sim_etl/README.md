@@ -1,6 +1,6 @@
-## Polifonia KG Places ETL
+## Polifonia KG Harmonic Similarities ETL
 
-Here you find code to produce Polifonia KG places related triples.
+Here you find code to produce Polifonia KG harmonic similarity related triples.
 
 For the mapping from raw data to RDF is used [sparql.anything](https://github.com/SPARQL-Anything/sparql.anything).
 Please see relative project site for installation and configuration.
