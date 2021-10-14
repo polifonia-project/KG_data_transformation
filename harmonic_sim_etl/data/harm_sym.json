@@ -1,6 +1,7 @@
 {
     "har_sim_pairs": [
         {
+            "harm_sim_id": "harm_sim_00424_00339",
             "recordingAIRI": "https://w3id.org/polifonia/resource/Recording/00424",
             "recordingBIRI": "https://w3id.org/polifonia/resource/Recording/00339",
             "compSimScore": 0.9,
@@ -41,6 +42,7 @@
             ],
         },
         {
+            "harm_sim_id": "harm_sim_08888_00111",
             "recordingA": "https://w3id.org/polifonia/resource/Recording/08888",
             "recordingB": "https://w3id.org/polifonia/resource/Recording/00111",
             "compSimScore": 0.5,
