@@ -54,7 +54,7 @@ CONSTRUCT {
                     cm:involvesRecording ?recordingAIRI ;
                     cm:involvesRecording ?recordingBIRI ;
                     cm:involvesChordProgression ?chordProgressionAIRI ;
-                    cm:involvesChordProgression ?chordProgressionAIRI ;
+                    cm:involvesChordProgression ?chordProgressionBIRI ;
                     cm:hasSimScore ?simScore .
 
 }

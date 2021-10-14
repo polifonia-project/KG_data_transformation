@@ -73,13 +73,13 @@
 <https://w3id.org/polifonia/resource/HarmonicSimilarity/harm_sim_00424_00339>
         a                            cm:HarmonicSimilarity ;
         cm:hasSimScore               "0.9"^^<http://www.w3.org/2001/XMLSchema#float> ;
-        cm:involvesChordProgression  <https://w3id.org/polifonia/resource/ChordProgression/00424_Fmaj_Cmaj_Fmaj> , <https://w3id.org/polifonia/resource/ChordProgression/00424_GmajB_Cmaj_GmajD> ;
+        cm:involvesChordProgression  <https://w3id.org/polifonia/resource/ChordProgression/00339_Fmaj%23_G%235_C%23> , <https://w3id.org/polifonia/resource/ChordProgression/00424_Fmaj_Cmaj_Fmaj> , <https://w3id.org/polifonia/resource/ChordProgression/00339_C%23_F%235_C%23> , <https://w3id.org/polifonia/resource/ChordProgression/00424_GmajB_Cmaj_GmajD> ;
         cm:involvesRecording         <https://w3id.org/polifonia/resource/Recording/00339> , <https://w3id.org/polifonia/resource/Recording/00424> .
 
 <https://w3id.org/polifonia/resource/HarmonicSimilarity/harm_sim_08888_00111>
         a                            cm:HarmonicSimilarity ;
         cm:hasSimScore               "0.5"^^<http://www.w3.org/2001/XMLSchema#float> ;
-        cm:involvesChordProgression  <https://w3id.org/polifonia/resource/ChordProgression/08888_AmajB_Fmaj_D> ;
+        cm:involvesChordProgression  <https://w3id.org/polifonia/resource/ChordProgression/00111_C%23_F%235_C%23> , <https://w3id.org/polifonia/resource/ChordProgression/08888_AmajB_Fmaj_D> ;
         cm:involvesRecording         <https://w3id.org/polifonia/resource/Recording/00111> , <https://w3id.org/polifonia/resource/Recording/08888> .
 
 <https://w3id.org/polifonia/resource/Recording/00111>
