@@ -10,15 +10,15 @@ Running: `fx -q queries/places.sparql` will output the KG in the console.
 
 To output a version of the knowledge graph in `kg/versions` folder run:
 
-```fx -q queries/places.sparql -f TTL -o kg/versions/polifonia-kg-places-{MAJOR.MINOR.PATCH}.ttl```
+```fx -q queries/places.sparql -f TTL -o kg/versions/polifonia-kg-harm-sim-{MAJOR.MINOR.PATCH}.ttl```
 
-e.g. ```fx -q queries/places.sparql -f TTL -o kg/versions/polifonia-kg-places-0.0.1.ttl```
+e.g. ```fx -q queries/places.sparql -f TTL -o kg/versions/polifonia-kg-harm-sim-0.0.1.ttl```
 
 
 
 To update the latest version of the knowledge graph in `kg/` folder run:
 
-```fx -q queries/places.sparql -f TTL -o kg/polifonia-kg-places-latest.ttl```
+```fx -q queries/places.sparql -f TTL -o kg/polifonia-kg-harm-sim-latest.ttl```
 
 
 ### Tutorial
