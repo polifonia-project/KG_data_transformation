@@ -68,14 +68,17 @@ CONSTRUCT {
 
 
         # UNION pattern to avoid nested OPTIONAL complexity, causing timeout issues
+        # 
+        #   { ?recording xyz:track_id ?recordingID . } UNION { ?recording  xyz:track_id ?recordingID ; xyz:youtube_id ?youtubeID . }
+        #       should be equivalent to:
+        #   { ?recording  xyz:track_id ?recordingID . OPTIONAL { ?recording xyz:youtube_id ?youtubeID . } }
+        #       but faster to resolve
+
 
         {
-            # Recording A with just ID
-            ?recordingA  xyz:recordingAIRI ?recordingAIRI ;
-            ?recordingB  xyz:recordingBIRI ?recordingBIRI .
-
+            # Recording with just ID
+            ?recording  xyz:track%5Fid ?recordingID .
         }
-
         UNION
         {
             # Recording with youtube ID
@@ -89,17 +92,6 @@ CONSTRUCT {
                         xyz:title ?titleLabel ;
                         xyz:title%5Ffor%5Firi ?titleID .
         }
-
-        fx:properties fx:location "data/harmonic-sym.csv"  ;
-        fx:media-type "text/csv" ;
-        fx:csv.headers true ;  
-        fx:blank-nodes false    .
-
-        ?row xyz:recordingA ?recordingA ;
-             xyz:recordingB ?recordingB ; 
-             xyz:chordProgressionA ?chordProgressionA ;
-             xyz:chordProgressionB ?chordProgressionB ; 
-             xyz:simScore ?simScore .
 
     } .
 
