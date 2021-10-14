@@ -55,9 +55,7 @@ CONSTRUCT {
                     cm:involvesRecording ?recordingBIRI ;
                     cm:involvesChordProgression ?chordProgressionAIRI ;
                     cm:involvesChordProgression ?chordProgressionAIRI ;
-                    cm:hasSimScore ?simScore ;
-                    cm:hasSimFunction ?simFunction ;
-                    cm:hasEncoding ?encoding .
+                    cm:hasSimScore ?simScore .
 
 }
     
@@ -71,8 +69,6 @@ CONSTRUCT {
         fx:media-type "application/json" ;
         fx:blank-nodes false    .
 
-        
-            # Recording with just ID
             ?similarity xyz:harm%5Fsim%5Fid ?harSimID ;
                         xyz:recordingAid ?recordingAid ;
                         xyz:recordingBid ?recordingBid ;
@@ -94,7 +90,7 @@ CONSTRUCT {
                             xyz:start ?beginCPB ;
                             xyz:end ?endCPB .
             
-    } 
+        } 
 
 
     # generate resources IRIs from string IDs
@@ -104,5 +100,4 @@ CONSTRUCT {
     BIND(IRI(CONCAT( STR(pr:) , "ChordProgression/", ENCODE_FOR_URI(?chordProgressionBid))) AS ?chordProgressionBIRI)
     BIND(IRI(CONCAT( STR(pr:) , "HarmonicSimilarity/", ENCODE_FOR_URI(?harSimID))) AS ?harmonicSimIRI)
 
-
-} 
+}
