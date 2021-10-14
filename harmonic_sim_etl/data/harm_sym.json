@@ -1,13 +1,14 @@
 {
     "har_sim_pairs": [
         {
-            "recordingAIRI": "https://w3id.org/polifonia/resource/Recording/00424",
-            "recordingBIRI": "https://w3id.org/polifonia/resource/Recording/00339",
-            "compSimScore": 0.9,
+            "harm_sim_id":"harm_sim_00424_00339",
+            "recordingAid":"00424",
+            "recordingBid":"00339",
+            "compSimScore":0.9,
             "cp_matches": [
                 {
-                    "cp_match_id": "00001",
-                    "humanSimScore": 4.5,
+                    "cp_match_id":"00001",
+                    "humanSimScore":4.5,
                     "cpA": {
                         "recording_IRI": "https://w3id.org/polifonia/resource/Recording/00424",
                         "cp_id": "00424_GmajB_Cmaj_GmajD",
@@ -22,8 +23,8 @@
                         }
                 },
                 {
-                    "cp_match_id": "00002",
-                    "humanSimScore": 2.5,
+                    "cp_match_id":"00002",
+                    "humanSimScore":2.5,
                     "cpA": {
                         "recording_IRI": "https://w3id.org/polifonia/resource/Recording/00424",
                         "cp_id": "00424_Fmaj_Cmaj_Fmaj",
@@ -41,13 +42,14 @@
             ]
         },
         {
-            "recordingA": "https://w3id.org/polifonia/resource/Recording/08888",
-            "recordingB": "https://w3id.org/polifonia/resource/Recording/00111",
-            "compSimScore": 0.5,
+            "harm_sim_id":"harm_sim_08888_00111",
+            "recordingAid":"08888",
+            "recordingBid":"00111",
+            "compSimScore":0.5,
             "cp_matches": [
                 {
-                    "cp_match_id": "00003",
-                    "humanSimScore": 4,
+                    "cp_match_id":"00003",
+                    "humanSimScore":4,
                     "cpA": {
                         "recording_IRI": "https://w3id.org/polifonia/resource/Recording/08888",
                         "cp_id": "08888_AmajB_Fmaj_D",

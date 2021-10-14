@@ -1,14 +1,9 @@
-# Query to extract data from preprocessed file with places related to Music domain
-# and build a Knowledge Graph according to Polifonia places ontology, using sparql.anything
+# Query to extract data from preprocessed file with harmonic similarity related to Music domain
+# and build a Knowledge Graph according to Polifonia ontology network, using sparql.anything
 #
-# from following datasets:
-#      -
-#      -
-#
-# Raw file: https://raw.githubusercontent.com/polifonia-project/sonar2021_demo/datasets/places/places.json
+# Raw file:
 # 
 # Polifonia KG ontology: https://github.com/polifonia-project/sonar2021_demo/issues/14
-
 
 
 # POLIFONIA prefixes
@@ -31,18 +26,28 @@ CONSTRUCT {
     # Recording
     ?recordingAIRI   a mp:Recording ;
                     mf:hasChordProgression ?chordProgressionAIRI ;
-                    cm:isHarmonicallySimilarTo ?RecordingBIRI .
+                    cm:isHarmonicallySimilarTo ?recordingBIRI ;
+                    cm:isInvolvedinHarmonicSimilarity ?harmonicSimIRI .
 
     ?recordingBIRI a mp:Recording ;
                     mf:hasChordProgression ?chordProgressionBIRI ;
-                    cm:isHarmonicallySimilarTo ?RecordingAIRI .
+                    cm:isHarmonicallySimilarTo ?recordingAIRI ;
+                    cm:isInvolvedinHarmonicSimilarity ?harmonicSimIRI .
 
     # ChordProgression
     ?chordProgressionAIRI   a mf:ChordProgression ;
-                    mf:isChordProgressionOf ?recordingAIRI .
+                    mf:isChordProgressionOf ?recordingAIRI ;
+                    mf:hasStartInRecording ?beginCPA ;
+                    mf:hasEndInRecording ?endCPA ;                    
+                    cm:isInvolvedinHarmonicSimilarity ?harmonicSimIRI .
+
 
     ?chordProgressionBIRI   a mf:ChordProgression ;
-                    mf:isChordProgressionOf ?recordingBIRI .
+                    mf:isChordProgressionOf ?recordingBIRI ;
+                    mf:hasStartInRecording ?beginCPB ;
+                    mf:hasEndInRecording ?endCPB ;
+                    cm:isInvolvedinHarmonicSimilarity ?harmonicSimIRI .
+
 
     # HarmonicSimilarity
     ?harmonicSimIRI a cm:HarmonicSimilarity ;
@@ -50,9 +55,7 @@ CONSTRUCT {
                     cm:involvesRecording ?recordingBIRI ;
                     cm:involvesChordProgression ?chordProgressionAIRI ;
                     cm:involvesChordProgression ?chordProgressionAIRI ;
-                    cm:hasSimScore ?simScore ;
-                    cm:hasSimFunction ?simFunction ;
-                    cm:hasEncoding ?encoding .
+                    cm:hasSimScore ?simScore .
 
 }
     
@@ -62,50 +65,39 @@ CONSTRUCT {
 
     SERVICE <x-sparql-anything:> {
 
-        fx:properties fx:location "data/harmonic_sym.json"  ;
+        fx:properties fx:location "data/harm_sym.json"  ;
         fx:media-type "application/json" ;
         fx:blank-nodes false    .
 
+            ?similarity xyz:harm%5Fsim%5Fid ?harSimID ;
+                        xyz:recordingAid ?recordingAid ;
+                        xyz:recordingBid ?recordingBid ;
+                        xyz:compSimScore ?simScore ;
+                        xyz:cp%5Fmatches ?cpMatchesList .
 
-        # UNION pattern to avoid nested OPTIONAL complexity, causing timeout issues
-        # 
-        #   { ?recording xyz:track_id ?recordingID . } UNION { ?recording  xyz:track_id ?recordingID ; xyz:youtube_id ?youtubeID . }
-        #       should be equivalent to:
-        #   { ?recording  xyz:track_id ?recordingID . OPTIONAL { ?recording xyz:youtube_id ?youtubeID . } }
-        #       but faster to resolve
+            ?cpMatchesList ?li ?cpMatch .
 
+            ?cpMatch xyz:cp%5Fmatch%5Fid ?cpMatchId ;
+                    xyz:cpA ?chordProgressionA ;
+                    xyz:cpB ?chordProgressionB ;
+                    xyz:humanSimScore ?humanSimScore .
 
-        {
-            # Recording with just ID
-            ?recording  xyz:track%5Fid ?recordingID .
-        }
-        UNION
-        {
-            # Recording with youtube ID
-            ?recording  xyz:track%5Fid ?recordingID ;
-                        xyz:youtube%5Fid ?youtubeID .
+            ?chordProgressionA xyz:cp%5Fid ?chordProgressionAid ;
+                            xyz:start ?beginCPA ;
+                            xyz:end ?endCPA .
+
+            ?chordProgressionB xyz:cp%5Fid ?chordProgressionBid ;
+                            xyz:start ?beginCPB ;
+                            xyz:end ?endCPB .
+            
         } 
-        UNION
-        {
-            # Recording with title label and title ID
-            ?recording  xyz:track%5Fid ?recordingID ;
-                        xyz:title ?titleLabel ;
-                        xyz:title%5Ffor%5Firi ?titleID .
-        }
-
-    } .
 
 
     # generate resources IRIs from string IDs
-    BIND(IRI(CONCAT( STR(pr:) , "Recording/", ENCODE_FOR_URI(?recordingA))) AS ?recordingAIRI)
-    BIND(IRI(CONCAT( STR(pr:) , "Recording/", ENCODE_FOR_URI(?recordingB))) AS ?recordingBIRI)
-    BIND(IRI(CONCAT( STR(pr:) , "ChordProgression/", ENCODE_FOR_URI(?chordProgressionA))) AS ?chordProgressionAIRI)
-    BIND(IRI(CONCAT( STR(pr:) , "ChordProgression/", ENCODE_FOR_URI(?chordProgressionB))) AS ?chordProgressionBIRI)
-    BIND(IRI(CONCAT( STR(pr:) , "HarmonicSimilarity/", ENCODE_FOR_URI(?recordingAIRI), "_", ENCODE_FOR_URI(?recordingBIRI))) AS ?harmonicSimIRI)
+    BIND(IRI(CONCAT( STR(pr:) , "Recording/", ENCODE_FOR_URI(?recordingAid))) AS ?recordingAIRI)
+    BIND(IRI(CONCAT( STR(pr:) , "Recording/", ENCODE_FOR_URI(?recordingBid))) AS ?recordingBIRI)
+    BIND(IRI(CONCAT( STR(pr:) , "ChordProgression/", ENCODE_FOR_URI(?chordProgressionAid))) AS ?chordProgressionAIRI)
+    BIND(IRI(CONCAT( STR(pr:) , "ChordProgression/", ENCODE_FOR_URI(?chordProgressionBid))) AS ?chordProgressionBIRI)
+    BIND(IRI(CONCAT( STR(pr:) , "HarmonicSimilarity/", ENCODE_FOR_URI(?harSimID))) AS ?harmonicSimIRI)
 
-
-
-    # individuals IRIs from string IRI
-    BIND(IRI(?sessionType) AS ?sessionTypeIndividualIRI)
-
-} 
+}
