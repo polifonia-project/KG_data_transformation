@@ -1,0 +1,1135 @@
+@prefix core: <https://w3id.org/polifonia/ON/core/> .
+@prefix fx:   <http://sparql.xyz/facade-x/ns/> .
+@prefix mp:   <https://w3id.org/polifonia/ON/musical-performance/> .
+@prefix pr:   <https://w3id.org/polifonia/resource/> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xyz:  <http://sparql.xyz/facade-x/data/> .
+
+mp:EditingSession rdfs:label "edited at" .
+
+mp:MixdownSession rdfs:label "mixed at" .
+
+mp:ProductionSession rdfs:label "produced at" .
+
+mp:RecordingSession rdfs:label "recorded at" .
+
+mp:EngineeringSession rdfs:label "engineered at" .
+
+<https://w3id.org/polifonia/resource/TimeInterval/00173_2>
+        rdf:type        core:TimeInterval ;
+        core:endTime    "1970-01-04" ;
+        core:startTime  "1970-01-04" .
+
+<https://w3id.org/polifonia/resource/TimeInterval/00008_1>
+        rdf:type        core:TimeInterval ;
+        core:endTime    "1962-09-11" ;
+        core:startTime  "1962-09-11" .
+
+<https://w3id.org/polifonia/resource/Session/00141_3>
+        rdf:type              mp:Session ;
+        core:hasPlace         <https://w3id.org/polifonia/resource/Place/6f12a5d2_52e5_4dec_9fed_494b1f65bb94> ;
+        core:hasTimeInterval  <https://w3id.org/polifonia/resource/TimeInterval/00141_3> ;
+        core:hasType          mp:RecordingSession .
+
+<https://w3id.org/polifonia/resource/TimeInterval/00089_3>
+        rdf:type        core:TimeInterval ;
+        core:endTime    "1966-06-01" ;
+        core:startTime  "1966-06-01" .
+
+<https://w3id.org/polifonia/resource/Recording/00111>
+        rdf:type                  mp:Recording ;
+        core:hasTitle             <https://w3id.org/polifonia/resource/Title/magical_mystery_tour> ;
+        core:hasYoutubeID         "K2xpbKBuTEw" ;
+        mp:hasRecordingPerformer  <https://w3id.org/polifonia/resource/Agent/the_beatles> ;
+        mp:isRecordingProducedBy  <https://w3id.org/polifonia/resource/RecordingProcess/00111> .
+
+<https://w3id.org/polifonia/resource/Session/00133_2>
+        rdf:type              mp:Session ;
+        core:hasPlace         <https://w3id.org/polifonia/resource/Place/6f12a5d2_52e5_4dec_9fed_494b1f65bb94> ;
+        core:hasTimeInterval  <https://w3id.org/polifonia/resource/TimeInterval/00133_2> ;
+        core:hasType          mp:RecordingSession .
+
+<https://w3id.org/polifonia/resource/TimeInterval/00151_3>
+        rdf:type        core:TimeInterval ;
+        core:endTime    "1969-07-23" ;
+        core:startTime  "1969-07-23" .
+
+<https://w3id.org/polifonia/resource/TimeInterval/00018_2>
+        rdf:type        core:TimeInterval ;
+        core:endTime    "1963-09-12" ;
+        core:startTime  "1963-09-12" .
+
+<https://w3id.org/polifonia/resource/Session/00151_4>
+        rdf:type              mp:Session ;
+        core:hasPlace         <https://w3id.org/polifonia/resource/Place/6f12a5d2_52e5_4dec_9fed_494b1f65bb94> ;
+        core:hasTimeInterval  <https://w3id.org/polifonia/resource/TimeInterval/00151_4> ;
+        core:hasType          mp:RecordingSession .
+
+<https://w3id.org/polifonia/resource/Session/00111_3>
+        rdf:type              mp:Session ;
+        core:hasPlace         <https://w3id.org/polifonia/resource/Place/2d9b9649_6f1d_4671_a859_f283192132b5> ;
+        core:hasTimeInterval  <https://w3id.org/polifonia/resource/TimeInterval/00111_3> ;
+        core:hasType          mp:RecordingSession .
+
+<https://w3id.org/polifonia/resource/Geometry/36b3e15b_66c2_4f55_882d_e5f993444a59>
+        rdf:type   core:Geometry ;
+        core:lat   "51.501733" ;
+        core:long  "-0.231823" .
+
+<https://w3id.org/polifonia/resource/Recording/00119>
+        rdf:type                  mp:Recording ;
+        core:hasTitle             <https://w3id.org/polifonia/resource/Title/penny_lane> ;
+        core:hasYoutubeID         "S-rB0pHI9fU" ;
+        mp:hasRecordingPerformer  <https://w3id.org/polifonia/resource/Agent/the_beatles> ;
+        mp:isRecordingProducedBy  <https://w3id.org/polifonia/resource/RecordingProcess/00119> .
+
+<https://w3id.org/polifonia/resource/Title/what_you%27re_doing>
+        rdf:type    core:Title ;
+        rdfs:label  "What You're Doing" .
+
+<https://w3id.org/polifonia/resource/Session/00072_1>
+        rdf:type              mp:Session ;
+        core:hasPlace         <https://w3id.org/polifonia/resource/Place/6f12a5d2_52e5_4dec_9fed_494b1f65bb94> ;
+        core:hasTimeInterval  <https://w3id.org/polifonia/resource/TimeInterval/00072_1> ;
+        core:hasType          mp:RecordingSession .
+
+<https://w3id.org/polifonia/resource/Session/00041_1>
+        rdf:type              mp:Session ;
+        core:hasPlace         <https://w3id.org/polifonia/resource/Place/c56fdea4_e81e_439a_a183_a52eb1141409> ;
+        core:hasTimeInterval  <https://w3id.org/polifonia/resource/TimeInterval/00041_1> ;
+        core:hasType          mp:MixdownSession .
+
+<https://w3id.org/polifonia/resource/RecordingProcess/00111>
+        rdf:type       mp:RecordingProcess ;
+        mp:hasSession  <https://w3id.org/polifonia/resource/Session/00111_5> , <https://w3id.org/polifonia/resource/Session/00111_4> , <https://w3id.org/polifonia/resource/Session/00111_3> , <https://w3id.org/polifonia/resource/Session/00111_2> , <https://w3id.org/polifonia/resource/Session/00111_1> .
+
+<https://w3id.org/polifonia/resource/Address/c56fdea4_e81e_439a_a183_a52eb1141409>
+        rdf:type          core:Address ;
+        core:fullAddress  "3 Abbey Road, St John’s Wood, London" .
+
+<https://w3id.org/polifonia/resource/TimeInterval/00119_3>
+        rdf:type        core:TimeInterval ;
+        core:endTime    "1967-01-06" ;
+        core:startTime  "1967-01-06" .
+
+<https://w3id.org/polifonia/resource/Address/2d9b9649_6f1d_4671_a859_f283192132b5>
+        rdf:type          core:Address ;
+        core:fullAddress  "3 Abbey Road, St John’s Wood, London" .
+
+<https://w3id.org/polifonia/resource/TimeInterval/00093_2>
+        rdf:type        core:TimeInterval ;
+        core:endTime    "1966-05-16" ;
+        core:startTime  "1966-05-16" .
+
+<https://w3id.org/polifonia/resource/Title/things_we_said_today>
+        rdf:type    core:Title ;
+        rdfs:label  "Things We Said Today" .
+
+<https://w3id.org/polifonia/resource/Session/00044_1>
+        rdf:type              mp:Session ;
+        core:hasPlace         <https://w3id.org/polifonia/resource/Place/6f12a5d2_52e5_4dec_9fed_494b1f65bb94> ;
+        core:hasTimeInterval  <https://w3id.org/polifonia/resource/TimeInterval/00044_1> ;
+        core:hasType          mp:MixdownSession .
+
+<https://w3id.org/polifonia/resource/RecordingProcess/00119>
+        rdf:type       mp:RecordingProcess ;
+        mp:hasSession  <https://w3id.org/polifonia/resource/Session/00119_7> , <https://w3id.org/polifonia/resource/Session/00119_6> , <https://w3id.org/polifonia/resource/Session/00119_5> , <https://w3id.org/polifonia/resource/Session/00119_4> , <https://w3id.org/polifonia/resource/Session/00119_3> , <https://w3id.org/polifonia/resource/Session/00119_2> , <https://w3id.org/polifonia/resource/Session/00119_1> .
+
+<https://w3id.org/polifonia/resource/Title/devil_in_her_heart>
+        rdf:type    core:Title ;
+        rdfs:label  "Devil In Her Heart" .
+
+<https://w3id.org/polifonia/resource/Session/00093_3>
+        rdf:type              mp:Session ;
+        core:hasPlace         <https://w3id.org/polifonia/resource/Place/2d9b9649_6f1d_4671_a859_f283192132b5> ;
+        core:hasTimeInterval  <https://w3id.org/polifonia/resource/TimeInterval/00093_3> ;
+        core:hasType          mp:RecordingSession .
+
+<https://w3id.org/polifonia/resource/TimeInterval/00151_6>
+        rdf:type        core:TimeInterval ;
+        core:endTime    "1969-07-30" ;
+        core:startTime  "1969-07-30" .
+
+<https://w3id.org/polifonia/resource/Title/back_in_the_u.s.s.r.>
+        rdf:type    core:Title ;
+        rdfs:label  "Back in the U.S.S.R." .
+
+<https://w3id.org/polifonia/resource/TimeInterval/00054_1>
+        rdf:type        core:TimeInterval ;
+        core:endTime    "1964-10-27" ;
+        core:startTime  "1964-10-27" .
+
+<https://w3id.org/polifonia/resource/Recording/00001>
+        rdf:type                  mp:Recording ;
+        core:hasTitle             <https://w3id.org/polifonia/resource/Title/i_saw_her_standing_there> ;
+        core:hasYoutubeID         "mwBdWVTR-o8" ;
+        mp:hasRecordingPerformer  <https://w3id.org/polifonia/resource/Agent/the_beatles> ;
+        mp:isRecordingProducedBy  <https://w3id.org/polifonia/resource/RecordingProcess/00001> .
+
+<https://w3id.org/polifonia/resource/Session/00054_2>
+        rdf:type              mp:Session ;
+        core:hasPlace         <https://w3id.org/polifonia/resource/Place/6f12a5d2_52e5_4dec_9fed_494b1f65bb94> ;
+        core:hasTimeInterval  <https://w3id.org/polifonia/resource/TimeInterval/00054_2> ;
+        core:hasType          mp:RecordingSession .
+
+<https://w3id.org/polifonia/resource/Geometry/10c562f7_859d_4e18_8ef6_089a3ca8f72c>
+        rdf:type   core:Geometry ;
+        core:lat   "46.515903" ;
+        core:long  "6.84877" .
+
+<https://w3id.org/polifonia/resource/Recording/00122>
+        rdf:type                  mp:Recording ;
+        core:hasTitle             <https://w3id.org/polifonia/resource/Title/back_in_the_u.s.s.r.> ;
+        core:hasYoutubeID         "nS5_EQgbuLc" ;
+        mp:hasRecordingPerformer  <https://w3id.org/polifonia/resource/Agent/the_beatles> ;
+        mp:isRecordingProducedBy  <https://w3id.org/polifonia/resource/RecordingProcess/00122> .
+
+<https://w3id.org/polifonia/resource/Title/don%27t_bother_me>
+        rdf:type    core:Title ;
+        rdfs:label  "Don't Bother Me" .
+
+<https://w3id.org/polifonia/resource/TimeInterval/00111_1>
+        rdf:type        core:TimeInterval ;
+        core:endTime    "1967-11-07" ;
+        core:startTime  "1967-11-07" .
+
+<https://w3id.org/polifonia/resource/TimeInterval/00207_2>
+        rdf:type        core:TimeInterval ;
+        core:endTime    "1989-01" ;
+        core:startTime  "1988-01" .
+
+<https://w3id.org/polifonia/resource/Recording/00093>
+        rdf:type                  mp:Recording ;
+        core:hasTitle             <https://w3id.org/polifonia/resource/Title/for_no_one> ;
+        core:hasYoutubeID         "HuphFPEqJqw" ;
+        mp:hasRecordingPerformer  <https://w3id.org/polifonia/resource/Agent/the_beatles> ;
+        mp:isRecordingProducedBy  <https://w3id.org/polifonia/resource/RecordingProcess/00093> .
+
+<https://w3id.org/polifonia/resource/Recording/00072>
+        rdf:type                  mp:Recording ;
+        core:hasTitle             <https://w3id.org/polifonia/resource/Title/you_won%27t_see_me> ;
+        core:hasYoutubeID         "_Xe0C2WB5Og" ;
+        mp:hasRecordingPerformer  <https://w3id.org/polifonia/resource/Agent/the_beatles> ;
+        mp:isRecordingProducedBy  <https://w3id.org/polifonia/resource/RecordingProcess/00072> .
+
+<https://w3id.org/polifonia/resource/Session/00119_3>
+        rdf:type              mp:Session ;
+        core:hasPlace         <https://w3id.org/polifonia/resource/Place/6f12a5d2_52e5_4dec_9fed_494b1f65bb94> ;
+        core:hasTimeInterval  <https://w3id.org/polifonia/resource/TimeInterval/00119_3> ;
+        core:hasType          mp:RecordingSession .
+
+<https://w3id.org/polifonia/resource/Session/00207_3>
+        rdf:type              mp:Session ;
+        core:hasPlace         <https://w3id.org/polifonia/resource/Place/36b3e15b_66c2_4f55_882d_e5f993444a59> ;
+        core:hasTimeInterval  <https://w3id.org/polifonia/resource/TimeInterval/00207_3> ;
+        core:hasType          mp:RecordingSession .
+
+<https://w3id.org/polifonia/resource/TimeInterval/00001_2>
+        rdf:type        core:TimeInterval ;
+        core:endTime    "1963-02-25" ;
+        core:startTime  "1963-02-25" .
+
+<https://w3id.org/polifonia/resource/Recording/00151>
+        rdf:type                  mp:Recording ;
+        core:hasTitle             <https://w3id.org/polifonia/resource/Title/come_together> ;
+        core:hasYoutubeID         "45cYwDMibGo" ;
+        mp:hasRecordingPerformer  <https://w3id.org/polifonia/resource/Agent/the_beatles> ;
+        mp:isRecordingProducedBy  <https://w3id.org/polifonia/resource/RecordingProcess/00151> .
+
+<https://w3id.org/polifonia/resource/Session/00141_1>
+        rdf:type              mp:Session ;
+        core:hasPlace         <https://w3id.org/polifonia/resource/Place/6f12a5d2_52e5_4dec_9fed_494b1f65bb94> ;
+        core:hasTimeInterval  <https://w3id.org/polifonia/resource/TimeInterval/00141_1> ;
+        core:hasType          mp:RecordingSession .
+
+<https://w3id.org/polifonia/resource/TimeInterval/00150_1>
+        rdf:type        core:TimeInterval ;
+        core:endTime    "1968-07-22" ;
+        core:startTime  "1968-07-22" .
+
+<https://w3id.org/polifonia/resource/Session/00173_1>
+        rdf:type              mp:Session ;
+        core:hasPlace         <https://w3id.org/polifonia/resource/Place/8a4daadd_bfbf_40a9_ac22_e6ee22d997cb> ;
+        core:hasTimeInterval  <https://w3id.org/polifonia/resource/TimeInterval/00173_1> ;
+        core:hasType          mp:RecordingSession .
+
+<https://w3id.org/polifonia/resource/Session/00001_3>
+        rdf:type              mp:Session ;
+        core:hasPlace         <https://w3id.org/polifonia/resource/Place/6f12a5d2_52e5_4dec_9fed_494b1f65bb94> ;
+        core:hasTimeInterval  <https://w3id.org/polifonia/resource/TimeInterval/00001_3> ;
+        core:hasType          mp:RecordingSession .
+
+<https://w3id.org/polifonia/resource/TimeInterval/00089_1>
+        rdf:type        core:TimeInterval ;
+        core:endTime    "1966-06-22" ;
+        core:startTime  "1966-06-22" .
+
+<https://w3id.org/polifonia/resource/Place/c56fdea4_e81e_439a_a183_a52eb1141409>
+        rdf:type          core:PhysicalSite ;
+        rdfs:label        "Abbey Road Studios: Studio 1" ;
+        core:hasAddress   <https://w3id.org/polifonia/resource/Address/c56fdea4_e81e_439a_a183_a52eb1141409> ;
+        core:hasGeometry  <https://w3id.org/polifonia/resource/Geometry/c56fdea4_e81e_439a_a183_a52eb1141409> .
+
+<https://w3id.org/polifonia/resource/TimeInterval/00122_2>
+        rdf:type        core:TimeInterval ;
+        core:endTime    "1968-08-23" ;
+        core:startTime  "1968-08-22" .
+
+<https://w3id.org/polifonia/resource/Session/00089_2>
+        rdf:type              mp:Session ;
+        core:hasPlace         <https://w3id.org/polifonia/resource/Place/2d9b9649_6f1d_4671_a859_f283192132b5> ;
+        core:hasTimeInterval  <https://w3id.org/polifonia/resource/TimeInterval/00089_2> ;
+        core:hasType          mp:RecordingSession .
+
+<https://w3id.org/polifonia/resource/TimeInterval/00026_1>
+        rdf:type        core:TimeInterval ;
+        core:endTime    "1963-08-21" ;
+        core:startTime  "1963-08-21" .
+
+<https://w3id.org/polifonia/resource/Recording/00059>
+        rdf:type                  mp:Recording ;
+        core:hasTitle             <https://w3id.org/polifonia/resource/Title/i_need_you> ;
+        core:hasYoutubeID         "FcEY7tCfSrg" ;
+        mp:hasRecordingPerformer  <https://w3id.org/polifonia/resource/Agent/the_beatles> ;
+        mp:isRecordingProducedBy  <https://w3id.org/polifonia/resource/RecordingProcess/00059> .
+
+<https://w3id.org/polifonia/resource/TimeInterval/00151_1>
+        rdf:type        core:TimeInterval ;
+        core:endTime    "1969-07-21" ;
+        core:startTime  "1969-07-21" .
+
+<https://w3id.org/polifonia/resource/Recording/00038>
+        rdf:type                  mp:Recording ;
+        core:hasTitle             <https://w3id.org/polifonia/resource/Title/things_we_said_today> ;
+        core:hasYoutubeID         "LFD3GT387uI" ;
+        mp:hasRecordingPerformer  <https://w3id.org/polifonia/resource/Agent/the_beatles> ;
+        mp:isRecordingProducedBy  <https://w3id.org/polifonia/resource/RecordingProcess/00038> .
+
+<https://w3id.org/polifonia/resource/Place/2d9b9649_6f1d_4671_a859_f283192132b5>
+        rdf:type          core:PhysicalSite ;
+        rdfs:label        "Abbey Road Studios: Studio 3" ;
+        core:hasAddress   <https://w3id.org/polifonia/resource/Address/2d9b9649_6f1d_4671_a859_f283192132b5> ;
+        core:hasGeometry  <https://w3id.org/polifonia/resource/Geometry/2d9b9649_6f1d_4671_a859_f283192132b5> .
+
+<https://w3id.org/polifonia/resource/TimeInterval/00119_6>
+        rdf:type        core:TimeInterval ;
+        core:endTime    "1967-01-12" ;
+        core:startTime  "1967-01-12" .
+
+<https://w3id.org/polifonia/resource/Session/00026_2>
+        rdf:type              mp:Session ;
+        core:hasPlace         <https://w3id.org/polifonia/resource/Place/6f12a5d2_52e5_4dec_9fed_494b1f65bb94> ;
+        core:hasTimeInterval  <https://w3id.org/polifonia/resource/TimeInterval/00026_2> ;
+        core:hasType          mp:RecordingSession .
+
+<https://w3id.org/polifonia/resource/Session/00151_2>
+        rdf:type              mp:Session ;
+        core:hasPlace         <https://w3id.org/polifonia/resource/Place/2d9b9649_6f1d_4671_a859_f283192132b5> ;
+        core:hasTimeInterval  <https://w3id.org/polifonia/resource/TimeInterval/00151_2> ;
+        core:hasType          mp:RecordingSession .
+
+<https://w3id.org/polifonia/resource/Session/00111_1>
+        rdf:type              mp:Session ;
+        core:hasPlace         <https://w3id.org/polifonia/resource/Place/c56fdea4_e81e_439a_a183_a52eb1141409> ;
+        core:hasTimeInterval  <https://w3id.org/polifonia/resource/TimeInterval/00111_1> ;
+        core:hasType          mp:EditingSession .
+
+<https://w3id.org/polifonia/resource/TimeInterval/00099_2>
+        rdf:type        core:TimeInterval ;
+        core:endTime    "1967-03-30" ;
+        core:startTime  "1967-03-30" .
+
+<https://w3id.org/polifonia/resource/RecordingProcess/00001>
+        rdf:type       mp:RecordingProcess ;
+        mp:hasSession  <https://w3id.org/polifonia/resource/Session/00001_3> , <https://w3id.org/polifonia/resource/Session/00001_2> , <https://w3id.org/polifonia/resource/Session/00001_1> .
+
+<https://w3id.org/polifonia/resource/Title/the_miracle>
+        rdf:type    core:Title ;
+        rdfs:label  "The Miracle" .
+
+<https://w3id.org/polifonia/resource/Session/00018_1>
+        rdf:type              mp:Session ;
+        core:hasPlace         <https://w3id.org/polifonia/resource/Place/6f12a5d2_52e5_4dec_9fed_494b1f65bb94> ;
+        core:hasTimeInterval  <https://w3id.org/polifonia/resource/TimeInterval/00018_1> ;
+        core:hasType          mp:MixdownSession .
+
+<https://w3id.org/polifonia/resource/Title/for_no_one>
+        rdf:type    core:Title ;
+        rdfs:label  "For No One" .
+
+<https://w3id.org/polifonia/resource/TimeInterval/00059_1>
+        rdf:type        core:TimeInterval ;
+        core:endTime    "1965-02-15" ;
+        core:startTime  "1965-02-15" .
+
+<https://w3id.org/polifonia/resource/Address/044df534_4170_45eb_8b42_805102bb2939>
+        rdf:type          core:Address ;
+        core:fullAddress  "117 Church Rd, London SW13 9HL, United Kingdom" .
+
+<https://w3id.org/polifonia/resource/Session/00059_2>
+        rdf:type              mp:Session ;
+        core:hasPlace         <https://w3id.org/polifonia/resource/Place/6f12a5d2_52e5_4dec_9fed_494b1f65bb94> ;
+        core:hasTimeInterval  <https://w3id.org/polifonia/resource/TimeInterval/00059_2> ;
+        core:hasType          mp:RecordingSession .
+
+<https://w3id.org/polifonia/resource/RecordingProcess/00122>
+        rdf:type       mp:RecordingProcess ;
+        mp:hasSession  <https://w3id.org/polifonia/resource/Session/00122_2> , <https://w3id.org/polifonia/resource/Session/00122_1> .
+
+<https://w3id.org/polifonia/resource/Title/you_won%27t_see_me>
+        rdf:type    core:Title ;
+        rdfs:label  "You Won't See Me" .
+
+<https://w3id.org/polifonia/resource/Address/6f12a5d2_52e5_4dec_9fed_494b1f65bb94>
+        rdf:type          core:Address ;
+        core:fullAddress  "3 Abbey Road, St John’s Wood, London" .
+
+<https://w3id.org/polifonia/resource/RecordingProcess/00093>
+        rdf:type       mp:RecordingProcess ;
+        mp:hasSession  <https://w3id.org/polifonia/resource/Session/00093_3> , <https://w3id.org/polifonia/resource/Session/00093_2> , <https://w3id.org/polifonia/resource/Session/00093_1> .
+
+<https://w3id.org/polifonia/resource/RecordingProcess/00072>
+        rdf:type       mp:RecordingProcess ;
+        mp:hasSession  <https://w3id.org/polifonia/resource/Session/00072_1> .
+
+<https://w3id.org/polifonia/resource/TimeInterval/00133_3>
+        rdf:type        core:TimeInterval ;
+        core:endTime    "1968-10-10" ;
+        core:startTime  "1968-10-10" .
+
+<https://w3id.org/polifonia/resource/Recording/00046>
+        rdf:type                  mp:Recording ;
+        core:hasTitle             <https://w3id.org/polifonia/resource/Title/i%27ll_follow_the_sun> ;
+        core:hasYoutubeID         "OgCkeYGlNXc" ;
+        mp:hasRecordingPerformer  <https://w3id.org/polifonia/resource/Agent/the_beatles> ;
+        mp:isRecordingProducedBy  <https://w3id.org/polifonia/resource/RecordingProcess/00046> .
+
+<https://w3id.org/polifonia/resource/Title/i%27ll_be_back>
+        rdf:type    core:Title ;
+        rdfs:label  "I'll Be Back" .
+
+<https://w3id.org/polifonia/resource/Session/00122_2>
+        rdf:type              mp:Session ;
+        core:hasPlace         <https://w3id.org/polifonia/resource/Place/6f12a5d2_52e5_4dec_9fed_494b1f65bb94> ;
+        core:hasTimeInterval  <https://w3id.org/polifonia/resource/TimeInterval/00122_2> ;
+        core:hasType          mp:RecordingSession .
+
+<https://w3id.org/polifonia/resource/RecordingProcess/00151>
+        rdf:type       mp:RecordingProcess ;
+        mp:hasSession  <https://w3id.org/polifonia/resource/Session/00151_6> , <https://w3id.org/polifonia/resource/Session/00151_5> , <https://w3id.org/polifonia/resource/Session/00151_4> , <https://w3id.org/polifonia/resource/Session/00151_3> , <https://w3id.org/polifonia/resource/Session/00151_2> , <https://w3id.org/polifonia/resource/Session/00151_1> .
+
+<https://w3id.org/polifonia/resource/TimeInterval/00038_2>
+        rdf:type        core:TimeInterval ;
+        core:endTime    "1964-06-02" ;
+        core:startTime  "1964-06-02" .
+
+<https://w3id.org/polifonia/resource/TimeInterval/00111_4>
+        rdf:type        core:TimeInterval ;
+        core:endTime    "1967-04-27" ;
+        core:startTime  "1967-04-27" .
+
+<https://w3id.org/polifonia/resource/Session/00119_6>
+        rdf:type              mp:Session ;
+        core:hasPlace         <https://w3id.org/polifonia/resource/Place/2d9b9649_6f1d_4671_a859_f283192132b5> ;
+        core:hasTimeInterval  <https://w3id.org/polifonia/resource/TimeInterval/00119_6> ;
+        core:hasType          mp:RecordingSession .
+
+<https://w3id.org/polifonia/resource/Recording/00054>
+        rdf:type                  mp:Recording ;
+        core:hasTitle             <https://w3id.org/polifonia/resource/Title/what_you%27re_doing> ;
+        core:hasYoutubeID         "7Sba2LbhkVY" ;
+        mp:hasRecordingPerformer  <https://w3id.org/polifonia/resource/Agent/the_beatles> ;
+        mp:isRecordingProducedBy  <https://w3id.org/polifonia/resource/RecordingProcess/00054> .
+
+<https://w3id.org/polifonia/resource/Title/good_night>
+        rdf:type    core:Title ;
+        rdfs:label  "Good Night" .
+
+<https://w3id.org/polifonia/resource/RecordingProcess/00059>
+        rdf:type       mp:RecordingProcess ;
+        mp:hasSession  <https://w3id.org/polifonia/resource/Session/00059_2> , <https://w3id.org/polifonia/resource/Session/00059_1> .
+
+<https://w3id.org/polifonia/resource/Title/with_a_little_help_from_my_friends>
+        rdf:type    core:Title ;
+        rdfs:label  "With A Little Help From My Friends" .
+
+<https://w3id.org/polifonia/resource/RecordingProcess/00038>
+        rdf:type       mp:RecordingProcess ;
+        mp:hasSession  <https://w3id.org/polifonia/resource/Session/00038_2> , <https://w3id.org/polifonia/resource/Session/00038_1> .
+
+<https://w3id.org/polifonia/resource/TimeInterval/00119_1>
+        rdf:type        core:TimeInterval ;
+        core:endTime    "1966-12-29" ;
+        core:startTime  "1966-12-29" .
+
+<https://w3id.org/polifonia/resource/TimeInterval/00141_3>
+        rdf:type        core:TimeInterval ;
+        core:endTime    "1968-07-23" ;
+        core:startTime  "1968-07-23" .
+
+<https://w3id.org/polifonia/resource/Address/36b3e15b_66c2_4f55_882d_e5f993444a59>
+        rdf:type          core:Address ;
+        core:fullAddress  "150 Goldhawk Road" .
+
+<https://w3id.org/polifonia/resource/Recording/00133>
+        rdf:type                  mp:Recording ;
+        core:hasTitle             <https://w3id.org/polifonia/resource/Title/piggies> ;
+        core:hasYoutubeID         "O3bCtx7SNAE" ;
+        mp:hasRecordingPerformer  <https://w3id.org/polifonia/resource/Agent/the_beatles> ;
+        mp:isRecordingProducedBy  <https://w3id.org/polifonia/resource/RecordingProcess/00133> .
+
+<https://w3id.org/polifonia/resource/Session/00133_3>
+        rdf:type              mp:Session ;
+        core:hasPlace         <https://w3id.org/polifonia/resource/Place/6f12a5d2_52e5_4dec_9fed_494b1f65bb94> ;
+        core:hasTimeInterval  <https://w3id.org/polifonia/resource/TimeInterval/00133_3> ;
+        core:hasType          mp:RecordingSession .
+
+<https://w3id.org/polifonia/resource/Title/come_together>
+        rdf:type    core:Title ;
+        rdfs:label  "Come Together" .
+
+<https://w3id.org/polifonia/resource/Session/00093_1>
+        rdf:type              mp:Session ;
+        core:hasPlace         <https://w3id.org/polifonia/resource/Place/6f12a5d2_52e5_4dec_9fed_494b1f65bb94> ;
+        core:hasTimeInterval  <https://w3id.org/polifonia/resource/TimeInterval/00093_1> ;
+        core:hasType          mp:RecordingSession .
+
+<https://w3id.org/polifonia/resource/TimeInterval/00151_4>
+        rdf:type        core:TimeInterval ;
+        core:endTime    "1969-07-25" ;
+        core:startTime  "1969-07-25" .
+
+<https://w3id.org/polifonia/resource/Recording/00041>
+        rdf:type                  mp:Recording ;
+        core:hasTitle             <https://w3id.org/polifonia/resource/Title/i%27ll_be_back> ;
+        core:hasYoutubeID         "WHH5tbembZs" ;
+        mp:hasRecordingPerformer  <https://w3id.org/polifonia/resource/Agent/the_beatles> ;
+        mp:isRecordingProducedBy  <https://w3id.org/polifonia/resource/RecordingProcess/00041> .
+
+<https://w3id.org/polifonia/resource/Agent/queen>
+        rdf:type    core:Agent ;
+        rdfs:label  "Queen" .
+
+<https://w3id.org/polifonia/resource/RecordingProcess/00046>
+        rdf:type       mp:RecordingProcess ;
+        mp:hasSession  <https://w3id.org/polifonia/resource/Session/00046_2> .
+
+<https://w3id.org/polifonia/resource/Session/00151_5>
+        rdf:type              mp:Session ;
+        core:hasPlace         <https://w3id.org/polifonia/resource/Place/2d9b9649_6f1d_4671_a859_f283192132b5> ;
+        core:hasTimeInterval  <https://w3id.org/polifonia/resource/TimeInterval/00151_5> ;
+        core:hasType          mp:RecordingSession .
+
+<https://w3id.org/polifonia/resource/Session/00111_4>
+        rdf:type              mp:Session ;
+        core:hasPlace         <https://w3id.org/polifonia/resource/Place/2d9b9649_6f1d_4671_a859_f283192132b5> ;
+        core:hasTimeInterval  <https://w3id.org/polifonia/resource/TimeInterval/00111_4> ;
+        core:hasType          mp:RecordingSession .
+
+<https://w3id.org/polifonia/resource/Recording/00141>
+        rdf:type                  mp:Recording ;
+        core:hasTitle             <https://w3id.org/polifonia/resource/Title/everybody%27s_got_something_to_hide_except_me_and_my_monkey> ;
+        core:hasYoutubeID         "VVIVYV_m6t4" ;
+        mp:hasRecordingPerformer  <https://w3id.org/polifonia/resource/Agent/the_beatles> ;
+        mp:isRecordingProducedBy  <https://w3id.org/polifonia/resource/RecordingProcess/00141> .
+
+<https://w3id.org/polifonia/resource/Place/6f12a5d2_52e5_4dec_9fed_494b1f65bb94>
+        rdf:type          core:PhysicalSite ;
+        rdfs:label        "Abbey Road Studios: Studio 2" ;
+        core:hasAddress   <https://w3id.org/polifonia/resource/Address/6f12a5d2_52e5_4dec_9fed_494b1f65bb94> ;
+        core:hasGeometry  <https://w3id.org/polifonia/resource/Geometry/6f12a5d2_52e5_4dec_9fed_494b1f65bb94> .
+
+<https://w3id.org/polifonia/resource/TimeInterval/00072_1>
+        rdf:type        core:TimeInterval ;
+        core:endTime    "1965-11-11" ;
+        core:startTime  "1965-11-11" .
+
+<https://w3id.org/polifonia/resource/Session/00119_1>
+        rdf:type              mp:Session ;
+        core:hasPlace         <https://w3id.org/polifonia/resource/Place/6f12a5d2_52e5_4dec_9fed_494b1f65bb94> ;
+        core:hasTimeInterval  <https://w3id.org/polifonia/resource/TimeInterval/00119_1> ;
+        core:hasType          mp:RecordingSession .
+
+<https://w3id.org/polifonia/resource/Session/00207_1>
+        rdf:type              mp:Session ;
+        core:hasPlace         <https://w3id.org/polifonia/resource/Place/10c562f7_859d_4e18_8ef6_089a3ca8f72c> ;
+        core:hasTimeInterval  <https://w3id.org/polifonia/resource/TimeInterval/00207_1> ;
+        core:hasType          mp:RecordingSession .
+
+<https://w3id.org/polifonia/resource/Title/love_me_do>
+        rdf:type    core:Title ;
+        rdfs:label  "Love Me Do" .
+
+<https://w3id.org/polifonia/resource/RecordingProcess/00054>
+        rdf:type       mp:RecordingProcess ;
+        mp:hasSession  <https://w3id.org/polifonia/resource/Session/00054_2> , <https://w3id.org/polifonia/resource/Session/00054_1> .
+
+<https://w3id.org/polifonia/resource/TimeInterval/00041_1>
+        rdf:type        core:TimeInterval ;
+        core:endTime    "1964-06-22" ;
+        core:startTime  "1964-06-22" .
+
+<https://w3id.org/polifonia/resource/Title/i_need_you>
+        rdf:type    core:Title ;
+        rdfs:label  "I Need You" .
+
+<https://w3id.org/polifonia/resource/Session/00041_2>
+        rdf:type              mp:Session ;
+        core:hasPlace         <https://w3id.org/polifonia/resource/Place/6f12a5d2_52e5_4dec_9fed_494b1f65bb94> ;
+        core:hasTimeInterval  <https://w3id.org/polifonia/resource/TimeInterval/00041_2> ;
+        core:hasType          mp:RecordingSession .
+
+<https://w3id.org/polifonia/resource/Session/00001_1>
+        rdf:type              mp:Session ;
+        core:hasPlace         <https://w3id.org/polifonia/resource/Place/c56fdea4_e81e_439a_a183_a52eb1141409> ;
+        core:hasTimeInterval  <https://w3id.org/polifonia/resource/TimeInterval/00001_1> ;
+        core:hasType          mp:EditingSession .
+
+<https://w3id.org/polifonia/resource/RecordingProcess/00133>
+        rdf:type       mp:RecordingProcess ;
+        mp:hasSession  <https://w3id.org/polifonia/resource/Session/00133_3> , <https://w3id.org/polifonia/resource/Session/00133_2> , <https://w3id.org/polifonia/resource/Session/00133_1> .
+
+<https://w3id.org/polifonia/resource/Recording/00099>
+        rdf:type                  mp:Recording ;
+        core:hasTitle             <https://w3id.org/polifonia/resource/Title/with_a_little_help_from_my_friends> ;
+        core:hasYoutubeID         "0C58ttB2-Qg" ;
+        mp:hasRecordingPerformer  <https://w3id.org/polifonia/resource/Agent/the_beatles> ;
+        mp:isRecordingProducedBy  <https://w3id.org/polifonia/resource/RecordingProcess/00099> .
+
+<https://w3id.org/polifonia/resource/Address/8a4daadd_bfbf_40a9_ac22_e6ee22d997cb>
+        rdf:type          core:Address ;
+        core:fullAddress  "3 Savile Row, Mayfair, London W1S 3PB, UK" .
+
+<https://w3id.org/polifonia/resource/RecordingProcess/00041>
+        rdf:type       mp:RecordingProcess ;
+        mp:hasSession  <https://w3id.org/polifonia/resource/Session/00041_2> , <https://w3id.org/polifonia/resource/Session/00041_1> .
+
+<https://w3id.org/polifonia/resource/Recording/00207>
+        rdf:type                  mp:Recording ;
+        core:hasTitle             <https://w3id.org/polifonia/resource/Title/the_miracle> ;
+        core:hasYoutubeID         "2DaY8-Mui0I" ;
+        mp:hasRecordingPerformer  <https://w3id.org/polifonia/resource/Agent/queen> ;
+        mp:isRecordingProducedBy  <https://w3id.org/polifonia/resource/RecordingProcess/00207> .
+
+<https://w3id.org/polifonia/resource/Geometry/044df534_4170_45eb_8b42_805102bb2939>
+        rdf:type   core:Geometry ;
+        core:lat   "51.4752" ;
+        core:long  "-0.2407" .
+
+<https://w3id.org/polifonia/resource/Place/36b3e15b_66c2_4f55_882d_e5f993444a59>
+        rdf:type          core:PhysicalSite ;
+        rdfs:label        "The Town House" ;
+        core:hasAddress   <https://w3id.org/polifonia/resource/Address/36b3e15b_66c2_4f55_882d_e5f993444a59> ;
+        core:hasGeometry  <https://w3id.org/polifonia/resource/Geometry/36b3e15b_66c2_4f55_882d_e5f993444a59> .
+
+<https://w3id.org/polifonia/resource/TimeInterval/00119_4>
+        rdf:type        core:TimeInterval ;
+        core:endTime    "1967-01-09" ;
+        core:startTime  "1967-01-09" .
+
+<https://w3id.org/polifonia/resource/Address/10c562f7_859d_4e18_8ef6_089a3ca8f72c>
+        rdf:type          core:Address ;
+        core:fullAddress  "Chemin des Jardins 26, 1616 Attalens" .
+
+<https://w3id.org/polifonia/resource/TimeInterval/00044_1>
+        rdf:type        core:TimeInterval ;
+        core:endTime    "1964-10-26" ;
+        core:startTime  "1964-10-26" .
+
+<https://w3id.org/polifonia/resource/Session/00099_1>
+        rdf:type              mp:Session ;
+        core:hasPlace         <https://w3id.org/polifonia/resource/Place/6f12a5d2_52e5_4dec_9fed_494b1f65bb94> ;
+        core:hasTimeInterval  <https://w3id.org/polifonia/resource/TimeInterval/00099_1> ;
+        core:hasType          mp:RecordingSession .
+
+<https://w3id.org/polifonia/resource/RecordingProcess/00141>
+        rdf:type       mp:RecordingProcess ;
+        mp:hasSession  <https://w3id.org/polifonia/resource/Session/00141_3> , <https://w3id.org/polifonia/resource/Session/00141_2> , <https://w3id.org/polifonia/resource/Session/00141_1> .
+
+<https://w3id.org/polifonia/resource/TimeInterval/00093_3>
+        rdf:type        core:TimeInterval ;
+        core:endTime    "1966-05-19" ;
+        core:startTime  "1966-05-19" .
+
+<https://w3id.org/polifonia/resource/Session/00044_2>
+        rdf:type              mp:Session ;
+        core:hasPlace         <https://w3id.org/polifonia/resource/Place/6f12a5d2_52e5_4dec_9fed_494b1f65bb94> ;
+        core:hasTimeInterval  <https://w3id.org/polifonia/resource/TimeInterval/00044_2> ;
+        core:hasType          mp:RecordingSession .
+
+<https://w3id.org/polifonia/resource/TimeInterval/00133_1>
+        rdf:type        core:TimeInterval ;
+        core:endTime    "1968-09-19" ;
+        core:startTime  "1968-09-19" .
+
+<https://w3id.org/polifonia/resource/Recording/00044>
+        rdf:type                  mp:Recording ;
+        core:hasTitle             <https://w3id.org/polifonia/resource/Title/baby%27s_in_black> ;
+        core:hasYoutubeID         "F-GOtTRhwc0" ;
+        mp:hasRecordingPerformer  <https://w3id.org/polifonia/resource/Agent/the_beatles> ;
+        mp:isRecordingProducedBy  <https://w3id.org/polifonia/resource/RecordingProcess/00044> .
+
+<https://w3id.org/polifonia/resource/TimeInterval/00054_2>
+        rdf:type        core:TimeInterval ;
+        core:endTime    "1964-10-26" ;
+        core:startTime  "1964-10-26" .
+
+<https://w3id.org/polifonia/resource/Session/00046_2>
+        rdf:type              mp:Session ;
+        core:hasPlace         <https://w3id.org/polifonia/resource/Place/6f12a5d2_52e5_4dec_9fed_494b1f65bb94> ;
+        core:hasTimeInterval  <https://w3id.org/polifonia/resource/TimeInterval/00046_2> ;
+        core:hasType          mp:RecordingSession .
+
+<https://w3id.org/polifonia/resource/TimeInterval/00111_2>
+        rdf:type        core:TimeInterval ;
+        core:endTime    "1967-04-25" ;
+        core:startTime  "1967-04-25" .
+
+<https://w3id.org/polifonia/resource/TimeInterval/00207_3>
+        rdf:type        core:TimeInterval ;
+        core:endTime    "1989-01" ;
+        core:startTime  "1988-01" .
+
+<https://w3id.org/polifonia/resource/Session/00119_4>
+        rdf:type              mp:Session ;
+        core:hasPlace         <https://w3id.org/polifonia/resource/Place/6f12a5d2_52e5_4dec_9fed_494b1f65bb94> ;
+        core:hasTimeInterval  <https://w3id.org/polifonia/resource/TimeInterval/00119_4> ;
+        core:hasType          mp:RecordingSession .
+
+<https://w3id.org/polifonia/resource/Session/00038_1>
+        rdf:type              mp:Session ;
+        core:hasPlace         <https://w3id.org/polifonia/resource/Place/2d9b9649_6f1d_4671_a859_f283192132b5> ;
+        core:hasTimeInterval  <https://w3id.org/polifonia/resource/TimeInterval/00038_1> ;
+        core:hasType          mp:MixdownSession .
+
+<https://w3id.org/polifonia/resource/Title/piggies>
+        rdf:type    core:Title ;
+        rdfs:label  "Piggies" .
+
+<https://w3id.org/polifonia/resource/RecordingProcess/00099>
+        rdf:type       mp:RecordingProcess ;
+        mp:hasSession  <https://w3id.org/polifonia/resource/Session/00099_2> , <https://w3id.org/polifonia/resource/Session/00099_1> .
+
+<https://w3id.org/polifonia/resource/Title/baby%27s_in_black>
+        rdf:type    core:Title ;
+        rdfs:label  "Baby's In Black" .
+
+<https://w3id.org/polifonia/resource/TimeInterval/00141_1>
+        rdf:type        core:TimeInterval ;
+        core:endTime    "1968-06-27" ;
+        core:startTime  "1968-06-27" .
+
+<https://w3id.org/polifonia/resource/RecordingProcess/00207>
+        rdf:type       mp:RecordingProcess ;
+        mp:hasSession  <https://w3id.org/polifonia/resource/Session/00207_3> , <https://w3id.org/polifonia/resource/Session/00207_2> , <https://w3id.org/polifonia/resource/Session/00207_1> .
+
+<https://w3id.org/polifonia/resource/TimeInterval/00001_3>
+        rdf:type        core:TimeInterval ;
+        core:endTime    "1963-02-11" ;
+        core:startTime  "1963-02-11" .
+
+<https://w3id.org/polifonia/resource/TimeInterval/00173_1>
+        rdf:type        core:TimeInterval ;
+        core:endTime    "1969-01-31" ;
+        core:startTime  "1969-01-31" .
+
+<https://w3id.org/polifonia/resource/Recording/00173>
+        rdf:type                  mp:Recording ;
+        core:hasTitle             <https://w3id.org/polifonia/resource/Title/let_it_be> ;
+        core:hasYoutubeID         "QDYfEBY9NM4" ;
+        mp:hasRecordingPerformer  <https://w3id.org/polifonia/resource/Agent/the_beatles> ;
+        mp:isRecordingProducedBy  <https://w3id.org/polifonia/resource/RecordingProcess/00173> .
+
+<https://w3id.org/polifonia/resource/Session/00141_2>
+        rdf:type              mp:Session ;
+        core:hasPlace         <https://w3id.org/polifonia/resource/Place/6f12a5d2_52e5_4dec_9fed_494b1f65bb94> ;
+        core:hasTimeInterval  <https://w3id.org/polifonia/resource/TimeInterval/00141_2> ;
+        core:hasType          mp:RecordingSession .
+
+<https://w3id.org/polifonia/resource/Session/00173_2>
+        rdf:type              mp:Session ;
+        core:hasPlace         <https://w3id.org/polifonia/resource/Place/6f12a5d2_52e5_4dec_9fed_494b1f65bb94> ;
+        core:hasTimeInterval  <https://w3id.org/polifonia/resource/TimeInterval/00173_2> ;
+        core:hasType          mp:RecordingSession .
+
+<https://w3id.org/polifonia/resource/TimeInterval/00089_2>
+        rdf:type        core:TimeInterval ;
+        core:endTime    "1966-05-26" ;
+        core:startTime  "1966-05-26" .
+
+<https://w3id.org/polifonia/resource/Place/8a4daadd_bfbf_40a9_ac22_e6ee22d997cb>
+        rdf:type          core:PhysicalSite ;
+        rdfs:label        "Apple Studios" ;
+        core:hasAddress   <https://w3id.org/polifonia/resource/Address/8a4daadd_bfbf_40a9_ac22_e6ee22d997cb> ;
+        core:hasGeometry  <https://w3id.org/polifonia/resource/Geometry/8a4daadd_bfbf_40a9_ac22_e6ee22d997cb> .
+
+<https://w3id.org/polifonia/resource/Session/00008_1>
+        rdf:type              mp:Session ;
+        core:hasPlace         <https://w3id.org/polifonia/resource/Place/6f12a5d2_52e5_4dec_9fed_494b1f65bb94> ;
+        core:hasTimeInterval  <https://w3id.org/polifonia/resource/TimeInterval/00008_1> ;
+        core:hasType          mp:MixdownSession .
+
+<https://w3id.org/polifonia/resource/Session/00133_1>
+        rdf:type              mp:Session ;
+        core:hasPlace         <https://w3id.org/polifonia/resource/Place/c56fdea4_e81e_439a_a183_a52eb1141409> ;
+        core:hasTimeInterval  <https://w3id.org/polifonia/resource/TimeInterval/00133_1> ;
+        core:hasType          mp:RecordingSession .
+
+<https://w3id.org/polifonia/resource/Session/00089_3>
+        rdf:type              mp:Session ;
+        core:hasPlace         <https://w3id.org/polifonia/resource/Place/6f12a5d2_52e5_4dec_9fed_494b1f65bb94> ;
+        core:hasTimeInterval  <https://w3id.org/polifonia/resource/TimeInterval/00089_3> ;
+        core:hasType          mp:RecordingSession .
+
+<https://w3id.org/polifonia/resource/TimeInterval/00018_1>
+        rdf:type        core:TimeInterval ;
+        core:endTime    "1963-09-30" ;
+        core:startTime  "1963-09-30" .
+
+<https://w3id.org/polifonia/resource/TimeInterval/00026_2>
+        rdf:type        core:TimeInterval ;
+        core:endTime    "1963-07-18" ;
+        core:startTime  "1963-07-18" .
+
+<https://w3id.org/polifonia/resource/TimeInterval/00151_2>
+        rdf:type        core:TimeInterval ;
+        core:endTime    "1969-07-22" ;
+        core:startTime  "1969-07-22" .
+
+<https://w3id.org/polifonia/resource/Recording/00018>
+        rdf:type                  mp:Recording ;
+        core:hasTitle             <https://w3id.org/polifonia/resource/Title/don%27t_bother_me> ;
+        core:hasYoutubeID         "z02oTI__0Mo" ;
+        mp:hasRecordingPerformer  <https://w3id.org/polifonia/resource/Agent/the_beatles> ;
+        mp:isRecordingProducedBy  <https://w3id.org/polifonia/resource/RecordingProcess/00018> .
+
+<https://w3id.org/polifonia/resource/Title/magical_mystery_tour>
+        rdf:type    core:Title ;
+        rdfs:label  "Magical Mystery Tour" .
+
+<https://w3id.org/polifonia/resource/Title/let_it_be>
+        rdf:type    core:Title ;
+        rdfs:label  "Let It Be" .
+
+<https://w3id.org/polifonia/resource/RecordingProcess/00044>
+        rdf:type       mp:RecordingProcess ;
+        mp:hasSession  <https://w3id.org/polifonia/resource/Session/00044_2> , <https://w3id.org/polifonia/resource/Session/00044_1> .
+
+<https://w3id.org/polifonia/resource/Agent/the_beatles>
+        rdf:type    core:Agent ;
+        rdfs:label  "The Beatles" .
+
+<https://w3id.org/polifonia/resource/TimeInterval/00119_7>
+        rdf:type        core:TimeInterval ;
+        core:endTime    "1967-01-17" ;
+        core:startTime  "1967-01-17" .
+
+<https://w3id.org/polifonia/resource/Session/00151_3>
+        rdf:type              mp:Session ;
+        core:hasPlace         <https://w3id.org/polifonia/resource/Place/2d9b9649_6f1d_4671_a859_f283192132b5> ;
+        core:hasTimeInterval  <https://w3id.org/polifonia/resource/TimeInterval/00151_3> ;
+        core:hasType          mp:RecordingSession .
+
+<https://w3id.org/polifonia/resource/Place/10c562f7_859d_4e18_8ef6_089a3ca8f72c>
+        rdf:type          core:PhysicalSite ;
+        rdfs:label        "Mountain Studios" ;
+        core:hasAddress   <https://w3id.org/polifonia/resource/Address/10c562f7_859d_4e18_8ef6_089a3ca8f72c> ;
+        core:hasGeometry  <https://w3id.org/polifonia/resource/Geometry/10c562f7_859d_4e18_8ef6_089a3ca8f72c> .
+
+<https://w3id.org/polifonia/resource/Session/00111_2>
+        rdf:type              mp:Session ;
+        core:hasPlace         <https://w3id.org/polifonia/resource/Place/2d9b9649_6f1d_4671_a859_f283192132b5> ;
+        core:hasTimeInterval  <https://w3id.org/polifonia/resource/TimeInterval/00111_2> ;
+        core:hasType          mp:RecordingSession .
+
+<https://w3id.org/polifonia/resource/Session/00018_2>
+        rdf:type              mp:Session ;
+        core:hasPlace         <https://w3id.org/polifonia/resource/Place/6f12a5d2_52e5_4dec_9fed_494b1f65bb94> ;
+        core:hasTimeInterval  <https://w3id.org/polifonia/resource/TimeInterval/00018_2> ;
+        core:hasType          mp:RecordingSession .
+
+<https://w3id.org/polifonia/resource/TimeInterval/00059_2>
+        rdf:type        core:TimeInterval ;
+        core:endTime    "1965-02-16" ;
+        core:startTime  "1965-02-16" .
+
+<https://w3id.org/polifonia/resource/Recording/00089>
+        rdf:type                  mp:Recording ;
+        core:hasTitle             <https://w3id.org/polifonia/resource/Title/yellow_submarine> ;
+        core:hasYoutubeID         "m2uTFF_3MaA" ;
+        mp:hasRecordingPerformer  <https://w3id.org/polifonia/resource/Agent/the_beatles> ;
+        mp:isRecordingProducedBy  <https://w3id.org/polifonia/resource/RecordingProcess/00089> .
+
+<https://w3id.org/polifonia/resource/Recording/00026>
+        rdf:type                  mp:Recording ;
+        core:hasTitle             <https://w3id.org/polifonia/resource/Title/devil_in_her_heart> ;
+        core:hasYoutubeID         "TOV4FWLIvNQ" ;
+        mp:hasRecordingPerformer  <https://w3id.org/polifonia/resource/Agent/the_beatles> ;
+        mp:isRecordingProducedBy  <https://w3id.org/polifonia/resource/RecordingProcess/00026> .
+
+<https://w3id.org/polifonia/resource/RecordingProcess/00173>
+        rdf:type       mp:RecordingProcess ;
+        mp:hasSession  <https://w3id.org/polifonia/resource/Session/00173_2> , <https://w3id.org/polifonia/resource/Session/00173_1> .
+
+<https://w3id.org/polifonia/resource/Geometry/8a4daadd_bfbf_40a9_ac22_e6ee22d997cb>
+        rdf:type   core:Geometry ;
+        core:lat   "51.510411" ;
+        core:long  "-0.139758" .
+
+<https://w3id.org/polifonia/resource/TimeInterval/00111_5>
+        rdf:type        core:TimeInterval ;
+        core:endTime    "1967-05-03" ;
+        core:startTime  "1967-05-03" .
+
+<https://w3id.org/polifonia/resource/Session/00119_7>
+        rdf:type              mp:Session ;
+        core:hasPlace         <https://w3id.org/polifonia/resource/Place/6f12a5d2_52e5_4dec_9fed_494b1f65bb94> ;
+        core:hasTimeInterval  <https://w3id.org/polifonia/resource/TimeInterval/00119_7> ;
+        core:hasType          mp:RecordingSession .
+
+<https://w3id.org/polifonia/resource/TimeInterval/00119_2>
+        rdf:type        core:TimeInterval ;
+        core:endTime    "1967-01-05" ;
+        core:startTime  "1967-01-05" .
+
+<https://w3id.org/polifonia/resource/RecordingProcess/00018>
+        rdf:type       mp:RecordingProcess ;
+        mp:hasSession  <https://w3id.org/polifonia/resource/Session/00018_2> , <https://w3id.org/polifonia/resource/Session/00018_1> .
+
+<https://w3id.org/polifonia/resource/TimeInterval/00093_1>
+        rdf:type        core:TimeInterval ;
+        core:endTime    "1966-05-09" ;
+        core:startTime  "1966-05-09" .
+
+<https://w3id.org/polifonia/resource/Session/00093_2>
+        rdf:type              mp:Session ;
+        core:hasPlace         <https://w3id.org/polifonia/resource/Place/6f12a5d2_52e5_4dec_9fed_494b1f65bb94> ;
+        core:hasTimeInterval  <https://w3id.org/polifonia/resource/TimeInterval/00093_2> ;
+        core:hasType          mp:RecordingSession .
+
+<https://w3id.org/polifonia/resource/RecordingProcess/00089>
+        rdf:type       mp:RecordingProcess ;
+        mp:hasSession  <https://w3id.org/polifonia/resource/Session/00089_3> , <https://w3id.org/polifonia/resource/Session/00089_2> , <https://w3id.org/polifonia/resource/Session/00089_1> .
+
+<https://w3id.org/polifonia/resource/TimeInterval/00151_5>
+        rdf:type        core:TimeInterval ;
+        core:endTime    "1969-07-29" ;
+        core:startTime  "1969-07-29" .
+
+<https://w3id.org/polifonia/resource/Geometry/c56fdea4_e81e_439a_a183_a52eb1141409>
+        rdf:type   core:Geometry ;
+        core:lat   "51.53192" ;
+        core:long  "-0.17835" .
+
+<https://w3id.org/polifonia/resource/RecordingProcess/00026>
+        rdf:type       mp:RecordingProcess ;
+        mp:hasSession  <https://w3id.org/polifonia/resource/Session/00026_2> , <https://w3id.org/polifonia/resource/Session/00026_1> .
+
+<https://w3id.org/polifonia/resource/Session/00151_6>
+        rdf:type              mp:Session ;
+        core:hasPlace         <https://w3id.org/polifonia/resource/Place/2d9b9649_6f1d_4671_a859_f283192132b5> ;
+        core:hasTimeInterval  <https://w3id.org/polifonia/resource/TimeInterval/00151_6> ;
+        core:hasType          mp:RecordingSession .
+
+<https://w3id.org/polifonia/resource/Title/i_saw_her_standing_there>
+        rdf:type    core:Title ;
+        rdfs:label  "I Saw Her Standing There" .
+
+<https://w3id.org/polifonia/resource/Session/00111_5>
+        rdf:type              mp:Session ;
+        core:hasPlace         <https://w3id.org/polifonia/resource/Place/2d9b9649_6f1d_4671_a859_f283192132b5> ;
+        core:hasTimeInterval  <https://w3id.org/polifonia/resource/TimeInterval/00111_5> ;
+        core:hasType          mp:RecordingSession .
+
+<https://w3id.org/polifonia/resource/Geometry/2d9b9649_6f1d_4671_a859_f283192132b5>
+        rdf:type   core:Geometry ;
+        core:lat   "51.53192" ;
+        core:long  "-0.17835" .
+
+<https://w3id.org/polifonia/resource/Session/00054_1>
+        rdf:type              mp:Session ;
+        core:hasPlace         <https://w3id.org/polifonia/resource/Place/6f12a5d2_52e5_4dec_9fed_494b1f65bb94> ;
+        core:hasTimeInterval  <https://w3id.org/polifonia/resource/TimeInterval/00054_1> ;
+        core:hasType          mp:MixdownSession .
+
+<https://w3id.org/polifonia/resource/TimeInterval/00207_1>
+        rdf:type        core:TimeInterval ;
+        core:endTime    "1989-01" ;
+        core:startTime  "1988-01" .
+
+<https://w3id.org/polifonia/resource/Session/00119_2>
+        rdf:type              mp:Session ;
+        core:hasPlace         <https://w3id.org/polifonia/resource/Place/6f12a5d2_52e5_4dec_9fed_494b1f65bb94> ;
+        core:hasTimeInterval  <https://w3id.org/polifonia/resource/TimeInterval/00119_2> ;
+        core:hasType          mp:RecordingSession .
+
+<https://w3id.org/polifonia/resource/Session/00207_2>
+        rdf:type              mp:Session ;
+        core:hasPlace         <https://w3id.org/polifonia/resource/Place/044df534_4170_45eb_8b42_805102bb2939> ;
+        core:hasTimeInterval  <https://w3id.org/polifonia/resource/TimeInterval/00207_2> ;
+        core:hasType          mp:RecordingSession .
+
+<https://w3id.org/polifonia/resource/TimeInterval/00041_2>
+        rdf:type        core:TimeInterval ;
+        core:endTime    "1964-06-01" ;
+        core:startTime  "1964-06-01" .
+
+<https://w3id.org/polifonia/resource/Recording/00008>
+        rdf:type                  mp:Recording ;
+        core:hasTitle             <https://w3id.org/polifonia/resource/Title/love_me_do> ;
+        core:hasYoutubeID         "KPon7i1-T1U" ;
+        mp:hasRecordingPerformer  <https://w3id.org/polifonia/resource/Agent/the_beatles> ;
+        mp:isRecordingProducedBy  <https://w3id.org/polifonia/resource/RecordingProcess/00008> .
+
+<https://w3id.org/polifonia/resource/TimeInterval/00001_1>
+        rdf:type        core:TimeInterval ;
+        core:endTime    "1963-02-25" ;
+        core:startTime  "1963-02-25" .
+
+<https://w3id.org/polifonia/resource/Recording/00150>
+        rdf:type                  mp:Recording ;
+        core:hasTitle             <https://w3id.org/polifonia/resource/Title/good_night> ;
+        core:hasYoutubeID         "OiLr2Vk9xR4" ;
+        mp:hasRecordingPerformer  <https://w3id.org/polifonia/resource/Agent/the_beatles> ;
+        mp:isRecordingProducedBy  <https://w3id.org/polifonia/resource/RecordingProcess/00150> .
+
+<https://w3id.org/polifonia/resource/Session/00001_2>
+        rdf:type              mp:Session ;
+        core:hasPlace         <https://w3id.org/polifonia/resource/Place/c56fdea4_e81e_439a_a183_a52eb1141409> ;
+        core:hasTimeInterval  <https://w3id.org/polifonia/resource/TimeInterval/00001_2> ;
+        core:hasType          mp:MixdownSession .
+
+<https://w3id.org/polifonia/resource/Session/00150_1>
+        rdf:type              mp:Session ;
+        core:hasPlace         <https://w3id.org/polifonia/resource/Place/c56fdea4_e81e_439a_a183_a52eb1141409> ;
+        core:hasTimeInterval  <https://w3id.org/polifonia/resource/TimeInterval/00150_1> ;
+        core:hasType          mp:RecordingSession .
+
+<https://w3id.org/polifonia/resource/TimeInterval/00122_1>
+        rdf:type        core:TimeInterval ;
+        core:endTime    "1968-08-23" ;
+        core:startTime  "1968-08-23" .
+
+<https://w3id.org/polifonia/resource/Session/00089_1>
+        rdf:type              mp:Session ;
+        core:hasPlace         <https://w3id.org/polifonia/resource/Place/2d9b9649_6f1d_4671_a859_f283192132b5> ;
+        core:hasTimeInterval  <https://w3id.org/polifonia/resource/TimeInterval/00089_1> ;
+        core:hasType          mp:MixdownSession .
+
+<https://w3id.org/polifonia/resource/TimeInterval/00119_5>
+        rdf:type        core:TimeInterval ;
+        core:endTime    "1967-01-10" ;
+        core:startTime  "1967-01-10" .
+
+<https://w3id.org/polifonia/resource/Session/00026_1>
+        rdf:type              mp:Session ;
+        core:hasPlace         <https://w3id.org/polifonia/resource/Place/2d9b9649_6f1d_4671_a859_f283192132b5> ;
+        core:hasTimeInterval  <https://w3id.org/polifonia/resource/TimeInterval/00026_1> ;
+        core:hasType          mp:MixdownSession .
+
+<https://w3id.org/polifonia/resource/Session/00151_1>
+        rdf:type              mp:Session ;
+        core:hasPlace         <https://w3id.org/polifonia/resource/Place/2d9b9649_6f1d_4671_a859_f283192132b5> ;
+        core:hasTimeInterval  <https://w3id.org/polifonia/resource/TimeInterval/00151_1> ;
+        core:hasType          mp:RecordingSession .
+
+<https://w3id.org/polifonia/resource/TimeInterval/00099_1>
+        rdf:type        core:TimeInterval ;
+        core:endTime    "1967-03-29" ;
+        core:startTime  "1967-03-29" .
+
+<https://w3id.org/polifonia/resource/TimeInterval/00044_2>
+        rdf:type        core:TimeInterval ;
+        core:endTime    "1964-08-11" ;
+        core:startTime  "1964-08-11" .
+
+<https://w3id.org/polifonia/resource/Session/00099_2>
+        rdf:type              mp:Session ;
+        core:hasPlace         <https://w3id.org/polifonia/resource/Place/6f12a5d2_52e5_4dec_9fed_494b1f65bb94> ;
+        core:hasTimeInterval  <https://w3id.org/polifonia/resource/TimeInterval/00099_2> ;
+        core:hasType          mp:RecordingSession .
+
+<https://w3id.org/polifonia/resource/Session/00059_1>
+        rdf:type              mp:Session ;
+        core:hasPlace         <https://w3id.org/polifonia/resource/Place/6f12a5d2_52e5_4dec_9fed_494b1f65bb94> ;
+        core:hasTimeInterval  <https://w3id.org/polifonia/resource/TimeInterval/00059_1> ;
+        core:hasType          mp:RecordingSession .
+
+<https://w3id.org/polifonia/resource/Title/penny_lane>
+        rdf:type    core:Title ;
+        rdfs:label  "Penny Lane" .
+
+<https://w3id.org/polifonia/resource/Title/i%27ll_follow_the_sun>
+        rdf:type    core:Title ;
+        rdfs:label  "I'll Follow the Sun" .
+
+<https://w3id.org/polifonia/resource/Title/everybody%27s_got_something_to_hide_except_me_and_my_monkey>
+        rdf:type    core:Title ;
+        rdfs:label  "Everybody's Got Something To Hide Except Me and My Monkey" .
+
+<https://w3id.org/polifonia/resource/TimeInterval/00133_2>
+        rdf:type        core:TimeInterval ;
+        core:endTime    "1968-09-20" ;
+        core:startTime  "1968-09-20" .
+
+<https://w3id.org/polifonia/resource/RecordingProcess/00008>
+        rdf:type       mp:RecordingProcess ;
+        mp:hasSession  <https://w3id.org/polifonia/resource/Session/00008_1> .
+
+<https://w3id.org/polifonia/resource/TimeInterval/00046_2>
+        rdf:type        core:TimeInterval ;
+        core:endTime    "1964-10-18" ;
+        core:startTime  "1964-10-18" .
+
+<https://w3id.org/polifonia/resource/Session/00122_1>
+        rdf:type              mp:Session ;
+        core:hasPlace         <https://w3id.org/polifonia/resource/Place/6f12a5d2_52e5_4dec_9fed_494b1f65bb94> ;
+        core:hasTimeInterval  <https://w3id.org/polifonia/resource/TimeInterval/00122_1> ;
+        core:hasType          mp:MixdownSession .
+
+<https://w3id.org/polifonia/resource/RecordingProcess/00150>
+        rdf:type       mp:RecordingProcess ;
+        mp:hasSession  <https://w3id.org/polifonia/resource/Session/00150_1> .
+
+<https://w3id.org/polifonia/resource/TimeInterval/00038_1>
+        rdf:type        core:TimeInterval ;
+        core:endTime    "1964-06-09" ;
+        core:startTime  "1964-06-09" .
+
+<https://w3id.org/polifonia/resource/TimeInterval/00111_3>
+        rdf:type        core:TimeInterval ;
+        core:endTime    "1967-04-26" ;
+        core:startTime  "1967-04-26" .
+
+<https://w3id.org/polifonia/resource/Title/yellow_submarine>
+        rdf:type    core:Title ;
+        rdfs:label  "Yellow Submarine" .
+
+<https://w3id.org/polifonia/resource/Session/00038_2>
+        rdf:type              mp:Session ;
+        core:hasPlace         <https://w3id.org/polifonia/resource/Place/6f12a5d2_52e5_4dec_9fed_494b1f65bb94> ;
+        core:hasTimeInterval  <https://w3id.org/polifonia/resource/TimeInterval/00038_2> ;
+        core:hasType          mp:RecordingSession .
+
+<https://w3id.org/polifonia/resource/Session/00119_5>
+        rdf:type              mp:Session ;
+        core:hasPlace         <https://w3id.org/polifonia/resource/Place/2d9b9649_6f1d_4671_a859_f283192132b5> ;
+        core:hasTimeInterval  <https://w3id.org/polifonia/resource/TimeInterval/00119_5> ;
+        core:hasType          mp:RecordingSession .
+
+<https://w3id.org/polifonia/resource/Place/044df534_4170_45eb_8b42_805102bb2939>
+        rdf:type          core:PhysicalSite ;
+        rdfs:label        "Olympic Studios" ;
+        core:hasAddress   <https://w3id.org/polifonia/resource/Address/044df534_4170_45eb_8b42_805102bb2939> ;
+        core:hasGeometry  <https://w3id.org/polifonia/resource/Geometry/044df534_4170_45eb_8b42_805102bb2939> .
+
+<https://w3id.org/polifonia/resource/Geometry/6f12a5d2_52e5_4dec_9fed_494b1f65bb94>
+        rdf:type   core:Geometry ;
+        core:lat   "51.53192" ;
+        core:long  "-0.17835" .
+
+<https://w3id.org/polifonia/resource/TimeInterval/00141_2>
+        rdf:type        core:TimeInterval ;
+        core:endTime    "1968-07-01" ;
+        core:startTime  "1968-07-01" .
