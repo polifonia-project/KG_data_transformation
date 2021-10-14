@@ -7,12 +7,12 @@
             "lineA": {
                 "lineLabel": "I love you so much" ,
                 "recordingId": "08888" ,
-                "line_number": "34" ,
+                "lineNumber": "34" ,
                 } ,
             "lineB": {
                 "lineLabel": "I adore you" ,
                 "recordingId": "00111" ,
-                "line_number": "2" ,
+                "lineNumber": "2" ,
                 }
         },
         {
@@ -27,7 +27,7 @@
             "lineB": {
                 "lineLabel": "I like you" ,
                 "recordingId": "00111" ,
-                "line_number": "67" ,
+                "lineNumber": "67" ,
                 } 
         },
         {
@@ -37,12 +37,12 @@
             "lineA": {
                 "lineLabel": "Walking on the street" ,
                 "recordingId": "08888" ,
-                "line_number": "1" ,
+                "lineNumber": "1" ,
                 } ,
             "lineB": {
                 "lineLabel": "Strolling around the city" ,
                 "recordingId": "00111" ,
-                "line_number": "10" ,
+                "lineNumber": "10" ,
                 } 
         }
     ]
