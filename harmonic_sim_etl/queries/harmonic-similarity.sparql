@@ -65,28 +65,26 @@ CONSTRUCT {
 
     SERVICE <x-sparql-anything:> {
 
-        fx:properties fx:location "data/harm_sim_test.json"  ;
+        fx:properties fx:location "data/harm_sim_full.json"  ;
         fx:media-type "application/json" ;
         fx:blank-nodes false    .
 
-            ?similarity xyz:harm%5Fsim%5Fid ?harSimID ;
-                        xyz:recordingAid ?recordingAid ;
-                        xyz:recordingBid ?recordingBid ;
+            ?similarity xyz:recordingA ?recordingAid ;
+                        xyz:recordingB ?recordingBid ;
                         xyz:compSimScore ?simScore ;
-                        xyz:cp%5Fmatches ?cpMatchesList .
+                        xyz:cpMatches ?cpMatchesList .
 
             ?cpMatchesList ?li ?cpMatch .
 
-            ?cpMatch xyz:cp%5Fmatch%5Fid ?cpMatchId ;
-                    xyz:cpA ?chordProgressionA ;
-                    xyz:cpB ?chordProgressionB ;
-                    xyz:humanSimScore ?humanSimScore .
+            ?cpMatch xyz:cpMatchId ?cpMatchId ;
+                    xyz:cpaA ?chordProgressionA ;
+                    xyz:cpaB ?chordProgressionB .
 
-            ?chordProgressionA xyz:cp%5Fid ?chordProgressionAid ;
+            ?chordProgressionA xyz:id ?chordProgressionAid ;
                             xyz:start ?beginCPA ;
                             xyz:end ?endCPA .
 
-            ?chordProgressionB xyz:cp%5Fid ?chordProgressionBid ;
+            ?chordProgressionB xyz:id ?chordProgressionBid ;
                             xyz:start ?beginCPB ;
                             xyz:end ?endCPB .
             
@@ -96,8 +94,9 @@ CONSTRUCT {
     # generate resources IRIs from string IDs
     BIND(IRI(CONCAT( STR(pr:) , "Recording/", ENCODE_FOR_URI(?recordingAid))) AS ?recordingAIRI)
     BIND(IRI(CONCAT( STR(pr:) , "Recording/", ENCODE_FOR_URI(?recordingBid))) AS ?recordingBIRI)
-    BIND(IRI(CONCAT( STR(pr:) , "ChordProgression/", ENCODE_FOR_URI(?chordProgressionAid))) AS ?chordProgressionAIRI)
-    BIND(IRI(CONCAT( STR(pr:) , "ChordProgression/", ENCODE_FOR_URI(?chordProgressionBid))) AS ?chordProgressionBIRI)
-    BIND(IRI(CONCAT( STR(pr:) , "HarmonicSimilarity/", ENCODE_FOR_URI(?harSimID))) AS ?harmonicSimIRI)
+    BIND(IRI(CONCAT( STR(pr:) , "ChordProgression/", ENCODE_FOR_URI(?recordingAid), "_", ENCODE_FOR_URI(?chordProgressionAid))) AS ?chordProgressionAIRI)
+    BIND(IRI(CONCAT( STR(pr:) , "ChordProgression/", ENCODE_FOR_URI(?recordingBid), "_", ENCODE_FOR_URI(?chordProgressionBid))) AS ?chordProgressionBIRI)
+    BIND(IRI(CONCAT( STR(pr:) , "HarmonicSimilarity/harm_sim_", ENCODE_FOR_URI(?recordingAid), "_", ENCODE_FOR_URI(?recordingBid))) AS ?harmonicSimIRI)
+
 
 }
