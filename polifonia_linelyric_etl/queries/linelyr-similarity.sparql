@@ -25,37 +25,50 @@ CONSTRUCT {
 
     # Recording
     ?recordingAIRI  a mp:Recording ;
-                    mf:hasLyrics ?LyricsAIRI ;
-                    cm:isHarmonicallySimilarTo ?recordingBIRI ;
-                    cm:isInvolvedinHarmonicSimilarity ?harmonicSimIRI .
+                    mf:hasLyrics ?lyricsAIRI ;
+                    mf:hasLyricLine ?lyricLineAIRI ;
+                    cm:isLineLyricallySimilarTo ?recordingBIRI ;
+                    cm:isInvolvedinLineLyricSimilarity ?lyricLineSimIRI .
 
     ?recordingBIRI a mp:Recording ;
-                    mf:hasChordProgression ?chordProgressionBIRI ;
-                    cm:isHarmonicallySimilarTo ?recordingAIRI ;
-                    cm:isInvolvedinHarmonicSimilarity ?harmonicSimIRI .
+                    mf:hasLyrics ?lyricsBIRI ;
+                    mf:hasLyricLine ?lyricLineBIRI ;
+                    cm:isLineLyricallySimilarTo ?recordinAIRI ;
+                    cm:isInvolvedinLineLyricSimilarity ?lyricLineSimIRI .
 
-    # ChordProgression
-    ?linelyricAIRI   a mf:ChordProgression ;
-                    mf:isChordProgressionOf ?recordingAIRI ;
-                    mf:hasStartInRecording ?beginCPA ;
-                    mf:hasEndInRecording ?endCPA ;                    
-                    cm:isInvolvedinHarmonicSimilarity ?harmonicSimIRI .
+    # Lyrics
+    ?lyricsAIRI a mf:Lyrics ;
+                mf:hasPart ?lyricLineAIRI .
+
+    ?lyricsBIRI a mf:Lyrics ;
+                mf:hasPart ?lyricLineBIRI .
+
+    # line lyric
+    ?lyricLineAIRI  a mf:LyricLine ;
+                    rdfs:label ?lineALabel ;
+                    mf:isPartOf ?lyricsAIRI ;
+                    mf:isLineLyricOfRecording ?recordingAIRI ;
+                    mf:hasLineNumber ?lineNumberA ;                    
+                    cm:isInvolvedinLyricLineSimilarity ?lyricLineSimIRI .
 
 
-    ?linelyricBIRI   a mf:ChordProgression ;
-                    mf:isChordProgressionOf ?recordingBIRI ;
-                    mf:hasStartInRecording ?beginCPB ;
-                    mf:hasEndInRecording ?endCPB ;
-                    cm:isInvolvedinHarmonicSimilarity ?harmonicSimIRI .
+    ?lyricLineBIRI  a mf:LyricLine ;
+                    rdfs:label ?lineBLabel ;
+                    mf:isPartOf ?lyricsBIRI ;
+                    mf:isLineLyricOfRecording ?recordingBIRI ;
+                    mf:hasLineNumber ?lineNumberB ;                    
+                    cm:isInvolvedinLyricLineSimilarity ?lyricLineSimIRI .
 
 
-    # HarmonicSimilarity
-    ?lyrSimIRI a cm:HarmonicSimilarity ;
+
+    # LineLyricSimilarity
+    ?lyricLineSimIRI a cm:LyricLineSimilarity ;
                     cm:involvesRecording ?recordingAIRI ;
                     cm:involvesRecording ?recordingBIRI ;
-                    cm:involvesChordProgression ?chordProgressionAIRI ;
-                    cm:involvesChordProgression ?chordProgressionBIRI ;
-                    cm:hasSimScore ?simScore .
+                    cm:involvesLyricLine ?linelyricAIRI ;
+                    cm:involvesLyricLine ?linelyricBIRI ;
+                    cm:hasCompSimScore ?compSimScore ;
+                    cm:hasHumanSimScore ?humanSimScore .
 
 }
     
@@ -65,39 +78,34 @@ CONSTRUCT {
 
     SERVICE <x-sparql-anything:> {
 
-        fx:properties fx:location "data/harm_sym.json"  ;
+        fx:properties fx:location "data/llyr_sim.json"  ;
         fx:media-type "application/json" ;
         fx:blank-nodes false    .
 
-            ?similarity xyz:harm%5Fsim%5Fid ?harSimID ;
-                        xyz:recordingAid ?recordingAid ;
-                        xyz:recordingBid ?recordingBid ;
-                        xyz:compSimScore ?simScore ;
-                        xyz:cp%5Fmatches ?cpMatchesList .
+            ?similarity xyz:lyrSimId ?lyrSimId ;
+                        xyz:compSimScore ?compSimScore ;
+                        xyz:humanSimScore ?humanSimScore ;
+                        xyz:lineA ?lineAobject ;
+                        xyz:lineB ?lineBobject .
 
-            ?cpMatchesList ?li ?cpMatch .
+            ?lineAobject xyz:lineLabel ?lineALabel ;
+                    xyz:recordingId ?recordingAId ;
+                    xyz:lineNumber ?lineNumberA .
 
-            ?cpMatch xyz:cp%5Fmatch%5Fid ?cpMatchId ;
-                    xyz:cpA ?chordProgressionA ;
-                    xyz:cpB ?chordProgressionB ;
-                    xyz:humanSimScore ?humanSimScore .
-
-            ?chordProgressionA xyz:cp%5Fid ?chordProgressionAid ;
-                            xyz:start ?beginCPA ;
-                            xyz:end ?endCPA .
-
-            ?chordProgressionB xyz:cp%5Fid ?chordProgressionBid ;
-                            xyz:start ?beginCPB ;
-                            xyz:end ?endCPB .
+            ?lineBobject xyz:lineLabel ?lineBLabel ;
+                    xyz:recordingId ?recordingBId ;
+                    xyz:lineNumber ?lineNumberB .
             
         } 
 
 
     # generate resources IRIs from string IDs
-    BIND(IRI(CONCAT( STR(pr:) , "Recording/", ENCODE_FOR_URI(?recordingAid))) AS ?recordingAIRI)
-    BIND(IRI(CONCAT( STR(pr:) , "Recording/", ENCODE_FOR_URI(?recordingBid))) AS ?recordingBIRI)
-    BIND(IRI(CONCAT( STR(pr:) , "ChordProgression/", ENCODE_FOR_URI(?chordProgressionAid))) AS ?chordProgressionAIRI)
-    BIND(IRI(CONCAT( STR(pr:) , "ChordProgression/", ENCODE_FOR_URI(?chordProgressionBid))) AS ?chordProgressionBIRI)
-    BIND(IRI(CONCAT( STR(pr:) , "HarmonicSimilarity/", ENCODE_FOR_URI(?harSimID))) AS ?harmonicSimIRI)
+    BIND(IRI(CONCAT( STR(pr:) , "Recording/", ENCODE_FOR_URI(?recordingAId))) AS ?recordingAIRI)
+    BIND(IRI(CONCAT( STR(pr:) , "Recording/", ENCODE_FOR_URI(?recordingBId))) AS ?recordingBIRI)
+    BIND(IRI(CONCAT( STR(pr:) , "Lyrics/lyric_", ENCODE_FOR_URI(?recordingAId))) AS ?lyricsAIRI)
+    BIND(IRI(CONCAT( STR(pr:) , "Lyrics/lyric_", ENCODE_FOR_URI(?recordingBId))) AS ?lyricsBIRI)
+    BIND(IRI(CONCAT( STR(pr:) , "LyricLine/", ENCODE_FOR_URI(?recordingAId), "_", ENCODE_FOR_URI(?lineNumberA))) AS ?lyricLineAIRI)
+    BIND(IRI(CONCAT( STR(pr:) , "LyricLine/", ENCODE_FOR_URI(?recordingBId), "_", ENCODE_FOR_URI(?lineNumberB))) AS ?lyricLineBIRI)
+    BIND(IRI(CONCAT( STR(pr:) , "LyricLineSimilarity/", ENCODE_FOR_URI(?lyrSimId))) AS ?lyricLineSimIRI)
 
 }

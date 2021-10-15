@@ -1,0 +1,49 @@
+{
+    "lineLyrSimPairs":[
+        {
+            "lyrSimId":"lyr_sim_08888_00111_34_2",
+            "compSimScore":0.9,
+            "humanSimScore":4.6,
+            "lineA":{
+                "lineLabel":"I love you so much",
+                "recordingId":"08888",
+                "lineNumber":"34"
+            },
+            "lineB":{
+                "lineLabel":"I adore you",
+                "recordingId":"00111",
+                "lineNumber":"2"
+            }
+        },
+        {
+            "lyrSimId":"lyr_sim_08888_00111_34_67",
+            "compSimScore":0.7,
+            "humanSimScore":4.3,
+            "lineA":{
+                "lineLabel":"I love you so much",
+                "recordingId":"08888",
+                "line_number":"34"
+            },
+            "lineB":{
+                "lineLabel":"I like you",
+                "recordingId":"00111",
+                "lineNumber":"67"
+            }
+        },
+        {
+            "lyrSimId":"lyr_sim_08888_00111_1_10",
+            "compSimScore":0.8,
+            "humanSimScore":4,
+            "lineA":{
+                "lineLabel":"Walking on the street",
+                "recordingId":"08888",
+                "lineNumber":"1"
+            },
+            "lineB":{
+                "lineLabel":"Strolling around the city",
+                "recordingId":"00111",
+                "lineNumber":"10"
+            }
+        }
+    ]
+}
