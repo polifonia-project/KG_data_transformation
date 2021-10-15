@@ -41,7 +41,8 @@ SELECT ?humanSimScore
 
              ?cpMatch xyz:cpMatchId ?cpMatchId ;
                     xyz:cpaA ?chordProgressionA ;
-                    xyz:cpaB ?chordProgressionB .
+                    xyz:cpaB ?chordProgressionB ;
+                    xyz:humanSimScore ?humanSimScore .
 
             # ?chordProgressionA xyz:id ?chordProgressionAid ;
                 #            xyz:start ?beginCPA ;
