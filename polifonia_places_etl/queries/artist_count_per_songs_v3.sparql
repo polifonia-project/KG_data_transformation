@@ -9,8 +9,8 @@ PREFIX pr:      <https://w3id.org/polifonia/resource/>
 PREFIX fx:  <http://sparql.xyz/facade-x/ns/>
 PREFIX xyz: <http://sparql.xyz/facade-x/data/>
 
-SELECT
-    (COUNT(?recordingID) as ?count ) 
+SELECT DISTINCT
+    ?recordingID
 WHERE {
 
     SERVICE <x-sparql-anything:> {
@@ -21,12 +21,23 @@ WHERE {
 		fx:blank-nodes false    .
 
 
-        { SELECT DISTINCT ?recordingID WHERE {
+        { SELECT DISTINCT ?recordingID (COUNT(?artistID) as ?artist_count ) WHERE {
 
-            # Recording
-    		?recording  xyz:track%5Fid ?recordingID .
+            # Recordings with artists
+            ?recording  xyz:track%5Fid ?recordingID ;
+                    xyz:artists ?artistList .
+                    # artist
+                    ?artistList ?li ?artist .
+                    ?artist xyz:name%5Firi ?artistID .
                     
-          }        
-	    }
-    } 
-}
+        } GROUP BY ?recordingID }
+
+### Uncomment one of the filter to select songs just with 1,2 or 3 artists
+
+#        FILTER (?artist_count = 1)
+#        FILTER (?artist_count = 2)
+        FILTER (?artist_count = 3)
+
+
+	}
+} 

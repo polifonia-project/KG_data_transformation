@@ -10,7 +10,7 @@ PREFIX fx:  <http://sparql.xyz/facade-x/ns/>
 PREFIX xyz: <http://sparql.xyz/facade-x/data/>
 
 SELECT
-    (COUNT(?recordingID) as ?count ) 
+    (COUNT(?artistID) as ?count ) 
 WHERE {
 
     SERVICE <x-sparql-anything:> {
@@ -21,11 +21,14 @@ WHERE {
 		fx:blank-nodes false    .
 
 
-        { SELECT DISTINCT ?recordingID WHERE {
+        { SELECT DISTINCT ?artistID WHERE {
 
-            # Recording
-    		?recording  xyz:track%5Fid ?recordingID .
-                    
+            # Recording with artists
+            ?recording  xyz:track%5Fid ?recordingID ;
+                    xyz:artists ?artistList .
+                    # artist
+                    ?artistList ?li ?artist .
+                    ?artist xyz:name%5Firi ?artistID .                    
           }        
 	    }
     } 
