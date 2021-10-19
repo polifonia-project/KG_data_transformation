@@ -1,0 +1,12 @@
+PREFIX cm:    <https://w3id.org/polifonia/ON/comparative-measure/> 
+
+SELECT DISTINCT
+    ?harmonicSimIRI
+WHERE {
+
+    ?harmonicSimIRI a cm:HarmonicSimilarity;
+                    cm:hasSimScore ?simScore .
+    
+    FILTER (?simScore > 0.5)
+
+}

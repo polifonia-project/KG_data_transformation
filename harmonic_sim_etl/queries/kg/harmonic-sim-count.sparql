@@ -1,0 +1,8 @@
+PREFIX cm:    <https://w3id.org/polifonia/ON/comparative-measure/> 
+
+SELECT DISTINCT
+    ?harmonicSimIRI
+WHERE {
+
+    ?harmonicSimIRI a cm:HarmonicSimilarity .
+}
