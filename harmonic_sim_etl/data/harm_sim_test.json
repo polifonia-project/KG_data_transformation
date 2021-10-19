@@ -1,0 +1,69 @@
+{
+    "har_sim_pairs": [
+        {
+            "harm_sim_id":"harm_sim_00424_00339",
+            "recordingA":"00424",
+            "recordingB":"00339",
+            "compSimScore":0.9,
+            "cpMatches": [
+                {
+                    "cpMatchId":"00001",
+                    "humanSimScore":4.5,
+                    "cpaA": {
+                        "recording_IRI": "https://w3id.org/polifonia/resource/Recording/00424",
+                        "id": "GmajB_Cmaj_GmajD",
+                        "start": "0:01:01.320000",
+                        "end": "0:01:03.700000"
+                        },
+                    "cpaB": {
+                        "recording_IRI": "https://w3id.org/polifonia/resource/Recording/00339",
+                        "id": "C#_F#5_C#",
+                        "start": "0:00:01.206300",
+                        "end": "0:01:58.925813"
+                        }
+                },
+                {
+                    "cpMatchId":"00002",
+                    "humanSimScore":2.5,
+                    "cpaA": {
+                        "recording_IRI": "https://w3id.org/polifonia/resource/Recording/00424",
+                        "id": "Fmaj_Cmaj_Fmaj",
+                        "start": "0:03:51.70000",
+                        "end": "0:03:53.900000"
+                        },
+                    "cpaB": {
+                        "recording_IRI": "https://w3id.org/polifonia/resource/Recording/00339",
+                        "id": "Fmaj#_G#5_C#",
+                        "start": "0:02:45.320000",
+                        "end": "0:03:09.124000"
+                        }
+                }
+
+            ]
+        },
+        {
+            "harm_sim_id":"harm_sim_08888_00111",
+            "recordingA":"08888",
+            "recordingB":"00111",
+            "compSimScore":0.5,
+            "cpMatches": [
+                {
+                    "cpMatchId":"00003",
+                    "humanSimScore":4,
+                    "cpaA": {
+                        "recording_IRI": "https://w3id.org/polifonia/resource/Recording/08888",
+                        "id": "AmajB_Fmaj_D",
+                        "start": "0:09:01.320000",
+                        "end": "0:10:03.700000"
+                        },
+                    "cpaB": {
+                        "recording_IRI": "https://w3id.org/polifonia/resource/Recording/00111",
+                        "id": "C#_F#5_C#",
+                        "start": "0:01:01.206300",
+                        "end": "0:01:48.00000"
+                        }
+                }
+            ]
+        }
+    ]
+}
