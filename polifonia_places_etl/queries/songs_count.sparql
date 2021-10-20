@@ -16,7 +16,7 @@ WHERE {
     SERVICE <x-sparql-anything:> {
 
         # location for json preprocessed file
-		fx:properties fx:location "data/places.json"  ;
+		fx:properties fx:location "data/places_v3_aligned_ids.json"  ;
 	  	fx:media-type "application/json" ;
 		fx:blank-nodes false    .
 
