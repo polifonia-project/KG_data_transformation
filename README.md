@@ -10,7 +10,7 @@ Data are modelled according to the [Polifonia Ontology Network](https://github.c
 Latest version of the [Polifonia KG](https://github.com/polifonia-project/kg_sparql_endpoint) deployable with docker is available.
 
 
-Data pupulating the KG are:
+Data populating the KG are:
 
 - [places](places_etl/kg/polifonia-kg-places-latest.ttl)
 - [harmonic similarity](harmonic_sim_etl/kg/polifonia-kg-harmonic-sim-latest.ttl)
@@ -23,7 +23,7 @@ Transformation producing RDF are:
 
 ## Dev
 
-To create a transformation for new data create a folder with following tree.
+To create a transformation for new data create a folder with following tree at the root of this project.
 
 ```
 my_transformation_etl
@@ -37,7 +37,7 @@ my_transformation_etl
         |_ my-transformation-latest.sparql
 ```
 
-Ensure that at least a `{my-transformation}-latest.ttl` and `{my-ouput-kg}-latest.ttl` is presented at the specified paths.
+Be sure that at least a `{my-transformation}-latest.ttl` and `{my-ouput-kg}-latest.ttl` is presented at the specified paths.
 [Polifonia KG Sparql Endpoint](https://github.com/polifonia-project/kg_sparql_endpoint) will point to these locations while harvesting data.
 
 
