@@ -1,13 +1,5 @@
 # Query to extract data from preprocessed file with places related to Music domain
 # and build a Knowledge Graph according to Polifonia places ontology, using sparql.anything
-#
-# from following datasets:
-#      -
-#      -
-#
-# Raw file: https://raw.githubusercontent.com/polifonia-project/sonar2021_demo/datasets/places/places.json
-# 
-# Polifonia KG ontology: https://github.com/polifonia-project/sonar2021_demo/issues/14
 
 
 

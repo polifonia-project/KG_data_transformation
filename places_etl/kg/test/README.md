@@ -4,4 +4,4 @@ To test KG contains expected results you can use the [kgdd](https://github.com/c
 
 To test a version:
 
-`kgdd --file ../versions/polifonia-kg-places-X.Y.Z.ttl --test ./testbed-X.Y.Z.ttl`
+`kgdd --file ../versions/polifonia-kg-places-X.Y.Z.ttl --test ./testbed-latest.json`
