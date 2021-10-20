@@ -9,11 +9,14 @@ Data are modelled according to the [Polifonia Ontology Network](https://github.c
 
 Latest version of the [Polifonia KG](https://github.com/polifonia-project/kg_sparql_endpoint) deployable with docker is available.
 
+#### RDF
 
 Data populating the KG are:
 
 - [places](places_etl/kg/polifonia-kg-places-latest.ttl)
 - [harmonic similarity](harmonic_sim_etl/kg/polifonia-kg-harmonic-sim-latest.ttl)
+
+#### Transformations
 
 Transformation producing RDF are:
 
