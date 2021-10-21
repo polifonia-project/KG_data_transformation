@@ -1,0 +1,8 @@
+PREFIX cm:      <https://w3id.org/polifonia/ON/comparative-measure/>
+
+SELECT DISTINCT 
+?lyrSim
+WHERE
+{
+    ?lyrSim a cm:LyricLineSimilarity
+}

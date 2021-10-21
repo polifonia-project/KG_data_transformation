@@ -78,7 +78,7 @@ CONSTRUCT {
 
     SERVICE <x-sparql-anything:> {
 
-        fx:properties fx:location "data/llyr_sim.json"  ;
+        fx:properties fx:location "data/lyr_sim_test.json"  ;
         fx:media-type "application/json" ;
         fx:blank-nodes false    .
 
