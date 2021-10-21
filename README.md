@@ -15,6 +15,8 @@ Data populating the KG are:
 
 - [places](places_etl/kg/polifonia-kg-places-latest.ttl)
 - [harmonic similarity](harmonic_sim_etl/kg/polifonia-kg-harmonic-sim-latest.ttl)
+- [lyrics line similarity](linelyric_sim_etl/kg/polifonia-kg-linelyr-latest.ttl)
+
 
 #### Transformations
 
@@ -22,6 +24,7 @@ Transformation producing RDF are:
 
 - [places transformation](places_etl/queries/places-latest.sparql)
 - [harmonic sim transformation](harmonic_sim_etl/queries/harmonic-similarity-latest.sparql)
+- [lyrics line sim transformation](linelyric_sim_etl/queries/linelyr-similarity-latest.sparql)
 
 
 ## Dev
