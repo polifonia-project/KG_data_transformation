@@ -1,0 +1,12 @@
+{
+    "tests" : [
+        {
+            "description" : "Expected Similarities Count",
+            "query" : "PREFIX cm:      <https://w3id.org/polifonia/ON/comparative-measure/> SELECT DISTINCT ?lyrSim WHERE { ?lyrSim a cm:LyricLineSimilarity }",
+            "results" : 182,
+            "rows": null,
+            "bindings": null,
+            "skip": false
+        }
+    ]
+}

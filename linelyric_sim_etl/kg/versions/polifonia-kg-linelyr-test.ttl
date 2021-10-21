@@ -1,0 +1,81 @@
+@prefix core:  <https://w3id.org/polifonia/ON/core/> .
+@prefix pr:    <https://w3id.org/polifonia/resource/> .
+@prefix fx:    <http://sparql.xyz/facade-x/ns/> .
+@prefix mp:    <https://w3id.org/polifonia/ON/musical-performance/> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix mc:    <https://w3id.org/polifonia/ON/musical-composition/> .
+@prefix xyz:   <http://sparql.xyz/facade-x/data/> .
+@prefix mf:    <https://w3id.org/polifonia/ON/musical-feature/> .
+@prefix cm:    <https://w3id.org/polifonia/ON/comparative-measure/> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://w3id.org/polifonia/resource/LyricLineSimilarity/lyr_sim_08888_00111_1_10>
+        a                     cm:LyricLineSimilarity ;
+        cm:hasCompSimScore    "0.8"^^<http://www.w3.org/2001/XMLSchema#float> ;
+        cm:hasHumanSimScore   "4"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        cm:involvesRecording  <https://w3id.org/polifonia/resource/Recording/00111> , <https://w3id.org/polifonia/resource/Recording/08888> .
+
+<https://w3id.org/polifonia/resource/LyricLine/00111_2>
+        a                          mf:LyricLine ;
+        rdfs:label                 "I adore you" ;
+        cm:isInvolvedinLyricLineSimilarity
+                <https://w3id.org/polifonia/resource/LyricLineSimilarity/lyr_sim_08888_00111_34_2> ;
+        mf:hasLineNumber           "2" ;
+        mf:isLineLyricOfRecording  <https://w3id.org/polifonia/resource/Recording/00111> ;
+        mf:isPartOf                <https://w3id.org/polifonia/resource/Lyrics/lyric_00111> .
+
+<https://w3id.org/polifonia/resource/Recording/08888>
+        a                            mp:Recording ;
+        cm:isInvolvedinLineLyricSimilarity
+                <https://w3id.org/polifonia/resource/LyricLineSimilarity/lyr_sim_08888_00111_1_10> , <https://w3id.org/polifonia/resource/LyricLineSimilarity/lyr_sim_08888_00111_34_2> ;
+        cm:isLineLyricallySimilarTo  <https://w3id.org/polifonia/resource/Recording/00111> ;
+        mf:hasLyricLine              <https://w3id.org/polifonia/resource/LyricLine/08888_1> , <https://w3id.org/polifonia/resource/LyricLine/08888_34> ;
+        mf:hasLyrics                 <https://w3id.org/polifonia/resource/Lyrics/lyric_08888> .
+
+<https://w3id.org/polifonia/resource/Lyrics/lyric_00111>
+        a           mf:Lyrics ;
+        mf:hasPart  <https://w3id.org/polifonia/resource/LyricLine/00111_10> , <https://w3id.org/polifonia/resource/LyricLine/00111_2> .
+
+<https://w3id.org/polifonia/resource/LyricLineSimilarity/lyr_sim_08888_00111_34_2>
+        a                     cm:LyricLineSimilarity ;
+        cm:hasCompSimScore    "0.9"^^<http://www.w3.org/2001/XMLSchema#float> ;
+        cm:hasHumanSimScore   "4.6"^^<http://www.w3.org/2001/XMLSchema#float> ;
+        cm:involvesRecording  <https://w3id.org/polifonia/resource/Recording/00111> , <https://w3id.org/polifonia/resource/Recording/08888> .
+
+<https://w3id.org/polifonia/resource/LyricLine/08888_34>
+        a                          mf:LyricLine ;
+        rdfs:label                 "I love you so much" ;
+        cm:isInvolvedinLyricLineSimilarity
+                <https://w3id.org/polifonia/resource/LyricLineSimilarity/lyr_sim_08888_00111_34_2> ;
+        mf:hasLineNumber           "34" ;
+        mf:isLineLyricOfRecording  <https://w3id.org/polifonia/resource/Recording/08888> ;
+        mf:isPartOf                <https://w3id.org/polifonia/resource/Lyrics/lyric_08888> .
+
+<https://w3id.org/polifonia/resource/LyricLine/08888_1>
+        a                          mf:LyricLine ;
+        rdfs:label                 "Walking on the street" ;
+        cm:isInvolvedinLyricLineSimilarity
+                <https://w3id.org/polifonia/resource/LyricLineSimilarity/lyr_sim_08888_00111_1_10> ;
+        mf:hasLineNumber           "1" ;
+        mf:isLineLyricOfRecording  <https://w3id.org/polifonia/resource/Recording/08888> ;
+        mf:isPartOf                <https://w3id.org/polifonia/resource/Lyrics/lyric_08888> .
+
+<https://w3id.org/polifonia/resource/Lyrics/lyric_08888>
+        a           mf:Lyrics ;
+        mf:hasPart  <https://w3id.org/polifonia/resource/LyricLine/08888_1> , <https://w3id.org/polifonia/resource/LyricLine/08888_34> .
+
+<https://w3id.org/polifonia/resource/Recording/00111>
+        a                mp:Recording ;
+        cm:isInvolvedinLineLyricSimilarity
+                <https://w3id.org/polifonia/resource/LyricLineSimilarity/lyr_sim_08888_00111_1_10> , <https://w3id.org/polifonia/resource/LyricLineSimilarity/lyr_sim_08888_00111_34_2> ;
+        mf:hasLyricLine  <https://w3id.org/polifonia/resource/LyricLine/00111_10> , <https://w3id.org/polifonia/resource/LyricLine/00111_2> ;
+        mf:hasLyrics     <https://w3id.org/polifonia/resource/Lyrics/lyric_00111> .
+
+<https://w3id.org/polifonia/resource/LyricLine/00111_10>
+        a                          mf:LyricLine ;
+        rdfs:label                 "Strolling around the city" ;
+        cm:isInvolvedinLyricLineSimilarity
+                <https://w3id.org/polifonia/resource/LyricLineSimilarity/lyr_sim_08888_00111_1_10> ;
+        mf:hasLineNumber           "10" ;
+        mf:isLineLyricOfRecording  <https://w3id.org/polifonia/resource/Recording/00111> ;
+        mf:isPartOf                <https://w3id.org/polifonia/resource/Lyrics/lyric_00111> .
