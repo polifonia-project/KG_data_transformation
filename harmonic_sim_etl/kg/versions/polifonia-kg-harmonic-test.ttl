@@ -1,0 +1,98 @@
+@prefix core:  <https://w3id.org/polifonia/ON/core/> .
+@prefix pr:    <https://w3id.org/polifonia/resource/> .
+@prefix fx:    <http://sparql.xyz/facade-x/ns/> .
+@prefix mp:    <https://w3id.org/polifonia/ON/musical-performance/> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix mc:    <https://w3id.org/polifonia/ON/musical-composition/> .
+@prefix xyz:   <http://sparql.xyz/facade-x/data/> .
+@prefix mf:    <https://w3id.org/polifonia/ON/musical-feature/> .
+@prefix cm:    <https://w3id.org/polifonia/ON/comparative-measure/> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+
+<https://w3id.org/polifonia/resource/ChordProgression/00339_C%23_F%235_C%23>
+        a                        mf:ChordProgression ;
+        cm:isInvolvedinHarmonicSimilarity
+                <https://w3id.org/polifonia/resource/HarmonicSimilarity/harm_sim_00424_00339> ;
+        mf:hasEndInRecording     "0:01:58.925813" ;
+        mf:hasStartInRecording   "0:00:01.206300" ;
+        mf:isChordProgressionOf  <https://w3id.org/polifonia/resource/Recording/00339> .
+
+<https://w3id.org/polifonia/resource/Recording/08888>
+        a                           mp:Recording ;
+        cm:isHarmonicallySimilarTo  <https://w3id.org/polifonia/resource/Recording/00111> ;
+        cm:isInvolvedinHarmonicSimilarity
+                <https://w3id.org/polifonia/resource/HarmonicSimilarity/harm_sim_08888_00111> ;
+        mf:hasChordProgression      <https://w3id.org/polifonia/resource/ChordProgression/08888_AmajB_Fmaj_D> .
+
+<https://w3id.org/polifonia/resource/ChordProgression/00424_GmajB_Cmaj_GmajD>
+        a                        mf:ChordProgression ;
+        cm:isInvolvedinHarmonicSimilarity
+                <https://w3id.org/polifonia/resource/HarmonicSimilarity/harm_sim_00424_00339> ;
+        mf:hasEndInRecording     "0:01:03.700000" ;
+        mf:hasStartInRecording   "0:01:01.320000" ;
+        mf:isChordProgressionOf  <https://w3id.org/polifonia/resource/Recording/00424> .
+
+<https://w3id.org/polifonia/resource/Recording/00339>
+        a                           mp:Recording ;
+        cm:isHarmonicallySimilarTo  <https://w3id.org/polifonia/resource/Recording/00424> ;
+        cm:isInvolvedinHarmonicSimilarity
+                <https://w3id.org/polifonia/resource/HarmonicSimilarity/harm_sim_00424_00339> ;
+        mf:hasChordProgression      <https://w3id.org/polifonia/resource/ChordProgression/00339_Fmaj%23_G%235_C%23> , <https://w3id.org/polifonia/resource/ChordProgression/00339_C%23_F%235_C%23> .
+
+<https://w3id.org/polifonia/resource/Recording/00424>
+        a                           mp:Recording ;
+        cm:isHarmonicallySimilarTo  <https://w3id.org/polifonia/resource/Recording/00339> ;
+        cm:isInvolvedinHarmonicSimilarity
+                <https://w3id.org/polifonia/resource/HarmonicSimilarity/harm_sim_00424_00339> ;
+        mf:hasChordProgression      <https://w3id.org/polifonia/resource/ChordProgression/00424_Fmaj_Cmaj_Fmaj> , <https://w3id.org/polifonia/resource/ChordProgression/00424_GmajB_Cmaj_GmajD> .
+
+<https://w3id.org/polifonia/resource/ChordProgression/00111_C%23_F%235_C%23>
+        a                        mf:ChordProgression ;
+        cm:isInvolvedinHarmonicSimilarity
+                <https://w3id.org/polifonia/resource/HarmonicSimilarity/harm_sim_08888_00111> ;
+        mf:hasEndInRecording     "0:01:48.00000" ;
+        mf:hasStartInRecording   "0:01:01.206300" ;
+        mf:isChordProgressionOf  <https://w3id.org/polifonia/resource/Recording/00111> .
+
+<https://w3id.org/polifonia/resource/ChordProgression/00424_Fmaj_Cmaj_Fmaj>
+        a                        mf:ChordProgression ;
+        cm:isInvolvedinHarmonicSimilarity
+                <https://w3id.org/polifonia/resource/HarmonicSimilarity/harm_sim_00424_00339> ;
+        mf:hasEndInRecording     "0:03:53.900000" ;
+        mf:hasStartInRecording   "0:03:51.70000" ;
+        mf:isChordProgressionOf  <https://w3id.org/polifonia/resource/Recording/00424> .
+
+<https://w3id.org/polifonia/resource/ChordProgression/00339_Fmaj%23_G%235_C%23>
+        a                        mf:ChordProgression ;
+        cm:isInvolvedinHarmonicSimilarity
+                <https://w3id.org/polifonia/resource/HarmonicSimilarity/harm_sim_00424_00339> ;
+        mf:hasEndInRecording     "0:03:09.124000" ;
+        mf:hasStartInRecording   "0:02:45.320000" ;
+        mf:isChordProgressionOf  <https://w3id.org/polifonia/resource/Recording/00339> .
+
+<https://w3id.org/polifonia/resource/HarmonicSimilarity/harm_sim_00424_00339>
+        a                            cm:HarmonicSimilarity ;
+        cm:hasSimScore               "0.9"^^<http://www.w3.org/2001/XMLSchema#float> ;
+        cm:involvesChordProgression  <https://w3id.org/polifonia/resource/ChordProgression/00339_Fmaj%23_G%235_C%23> , <https://w3id.org/polifonia/resource/ChordProgression/00424_Fmaj_Cmaj_Fmaj> , <https://w3id.org/polifonia/resource/ChordProgression/00339_C%23_F%235_C%23> , <https://w3id.org/polifonia/resource/ChordProgression/00424_GmajB_Cmaj_GmajD> ;
+        cm:involvesRecording         <https://w3id.org/polifonia/resource/Recording/00339> , <https://w3id.org/polifonia/resource/Recording/00424> .
+
+<https://w3id.org/polifonia/resource/HarmonicSimilarity/harm_sim_08888_00111>
+        a                            cm:HarmonicSimilarity ;
+        cm:hasSimScore               "0.5"^^<http://www.w3.org/2001/XMLSchema#float> ;
+        cm:involvesChordProgression  <https://w3id.org/polifonia/resource/ChordProgression/00111_C%23_F%235_C%23> , <https://w3id.org/polifonia/resource/ChordProgression/08888_AmajB_Fmaj_D> ;
+        cm:involvesRecording         <https://w3id.org/polifonia/resource/Recording/00111> , <https://w3id.org/polifonia/resource/Recording/08888> .
+
+<https://w3id.org/polifonia/resource/Recording/00111>
+        a                           mp:Recording ;
+        cm:isHarmonicallySimilarTo  <https://w3id.org/polifonia/resource/Recording/08888> ;
+        cm:isInvolvedinHarmonicSimilarity
+                <https://w3id.org/polifonia/resource/HarmonicSimilarity/harm_sim_08888_00111> ;
+        mf:hasChordProgression      <https://w3id.org/polifonia/resource/ChordProgression/00111_C%23_F%235_C%23> .
+
+<https://w3id.org/polifonia/resource/ChordProgression/08888_AmajB_Fmaj_D>
+        a                        mf:ChordProgression ;
+        cm:isInvolvedinHarmonicSimilarity
+                <https://w3id.org/polifonia/resource/HarmonicSimilarity/harm_sim_08888_00111> ;
+        mf:hasEndInRecording     "0:10:03.700000" ;
+        mf:hasStartInRecording   "0:09:01.320000" ;
+        mf:isChordProgressionOf  <https://w3id.org/polifonia/resource/Recording/08888> .
