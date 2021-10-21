@@ -25,5 +25,5 @@ To update the latest version of the knowledge graph in `kg/` folder run:
 
 A tutorial for sparql.anything
 
-```fx -q queries/transformations/tutorial.sparql -f JSON -o kg/tutorial/tutorial.jsonld```
+```fx -q queries/raw-data/tutorial.sparql -f JSON -o kg/tutorial/tutorial.jsonld```
 
