@@ -21,23 +21,15 @@ PREFIX xyz: <http://sparql.xyz/facade-x/data/>
 CONSTRUCT { 
 
     # Recording
-    ?recordingAIRI  a mp:Recording ;
-                    mf:hasChordProgression ?chordProgressionAIRI ;
-                    cm:isHarmonicallySimilarTo ?recordingBIRI .
+    ?recordingAIRI  a mp:Recording .
 
-    ?recordingBIRI a mp:Recording ;
-                    mf:hasChordProgression ?chordProgressionBIRI ;
-                    cm:isHarmonicallySimilarTo ?recordingAIRI .
+    ?recordingBIRI a mp:Recording .
 
     # ChordProgression
-    ?chordProgressionAIRI   a mf:ChordProgression ;
-                    mf:isChordProgressionOf ?recordingAIRI ;
-                    cm:hasSimilarChordProgression ?chordProgressionBIRI .
+    ?chordProgressionAIRI   a mf:ChordProgression .
 
 
-    ?chordProgressionBIRI   a mf:ChordProgression ;
-                    mf:isChordProgressionOf ?recordingBIRI ;
-                    cm:hasSimilarChordProgression ?chordProgressionAIRI .
+    ?chordProgressionBIRI   a mf:ChordProgression .
 
     # HarmonicSimilarity
     ?harmonicSimIRI a cm:HarmonicSimilarity ;
@@ -70,7 +62,7 @@ CONSTRUCT {
 
     SERVICE <x-sparql-anything:> {
 
-        fx:properties fx:location "data/harm_sim_full_v2.json"  ;
+        fx:properties fx:location "data/harmonic_similarity_v3.json"  ;
         fx:media-type "application/json" ;
         fx:blank-nodes false    .
 
