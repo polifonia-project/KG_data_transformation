@@ -21,31 +21,41 @@ PREFIX xyz: <http://sparql.xyz/facade-x/data/>
 CONSTRUCT { 
 
     # Recording
-    ?recordingAIRI  a mp:Recording .
+    ?recordingAIRI  a mp:Recording ;
+                    cm:isRecordingInvolvedInHarmSim ?harmonicSimIRI ;
+                    cm:isRecordingInvolvedInCPSim ?chordProgressionInSimilarityAIRI .
 
-    ?recordingBIRI a mp:Recording .
+    ?recordingBIRI a mp:Recording ;
+                    cm:isRecordingInvolvedInHarmSim ?harmonicSimIRI ;
+                    cm:isRecordingInvolvedInCPSim ?chordProgressionInSimilarityBIRI .
 
     # ChordProgression
-    ?chordProgressionAIRI   a mf:ChordProgression .
+    ?chordProgressionAIRI   a mf:ChordProgression ;
+                    cm:isChordProgressioninCPSim ?chordProgressionInSimilarityAIRI .
 
 
-    ?chordProgressionBIRI   a mf:ChordProgression .
+    ?chordProgressionBIRI   a mf:ChordProgression ;
+                        cm:isChordProgressioninCPSim ?chordProgressionInSimilarityBIRI .
 
     # HarmonicSimilarity
     ?harmonicSimIRI a cm:HarmonicSimilarity ;
-                    cm:hasChordProgressionInSimilarity ?chordProgressionInSimilarityAIRI ;
-                    cm:hasChordProgressionInSimilarity ?chordProgressionInSimilarityBIRI ;
-                    cm:hasSimScore ?simScore .
+                    cm:hasChordProgressionInHarmSim ?chordProgressionInSimilarityAIRI ;
+                    cm:hasChordProgressionInHarmSim ?chordProgressionInSimilarityBIRI ;
+                    cm:similarityScore ?simScore ;
+                    cm:harmSimInvolvesRecording ?recordingAIRI ;
+                    cm:harmSimInvolvesRecording ?recordingBIRI .
     
     ?chordProgressionInSimilarityAIRI a cm:ChordProgressionInSimilarity ;
+                                    cm:isChordProgressioninHarmSim ?harmonicSimIRI ;
                                     core:hasTimeInterval ?timeIntervalAIRI;
-                                    cm:hasChordProgression ?chordProgressionAIRI;
-                                    cm:hasRecording ?recordingAIRI .
+                                    cm:aboutChordProgression ?chordProgressionAIRI;
+                                    cm:CPSimInvolvesRecording ?recordingAIRI .
 
     ?chordProgressionInSimilarityBIRI a cm:ChordProgressionInSimilarity ;
+                                    cm:isChordProgressioninHarmSim ?harmonicSimIRI ;
                                     core:hasTimeInterval ?timeIntervalBIRI;
-                                    cm:hasChordProgression ?chordProgressionBIRI;
-                                    cm:hasRecording ?recordingBIRI .
+                                    cm:aboutChordProgression ?chordProgressionBIRI;
+                                    cm:CPSimInvolvesRecording ?recordingBIRI .
 
     ?timeIntervalAIRI    a core:TimeInterval ;
                             core:startTime ?beginCPA ;
