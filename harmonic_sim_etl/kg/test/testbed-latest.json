@@ -10,7 +10,7 @@
         },
         {
             "description" : "Expected Similarities with score greater than 0.5",
-            "query" : "PREFIX cm:    <https://w3id.org/polifonia/ON/comparative-measure/> \n SELECT DISTINCT ?harmonicSimIRI WHERE { ?harmonicSimIRI a cm:HarmonicSimilarity; cm:hasSimScore ?simScore . FILTER (?simScore > 0.5) }",
+            "query" : "PREFIX cm:    <https://w3id.org/polifonia/ON/comparative-measure/> \n SELECT DISTINCT ?harmonicSimIRI WHERE { ?harmonicSimIRI a cm:HarmonicSimilarity; cm:similarityScore ?simScore . FILTER (?simScore > 0.5) }",
             "results" : 3860,
             "rows": null,
             "bindings": null,
