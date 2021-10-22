@@ -31,11 +31,11 @@ CONSTRUCT {
 
     # ChordProgression
     ?chordProgressionAIRI   a mf:ChordProgression ;
-                    cm:isChordProgressioninCPSim ?chordProgressionInSimilarityAIRI .
+                    cm:isChordProgressionInCPSim ?chordProgressionInSimilarityAIRI .
 
 
     ?chordProgressionBIRI   a mf:ChordProgression ;
-                        cm:isChordProgressioninCPSim ?chordProgressionInSimilarityBIRI .
+                        cm:isChordProgressionInCPSim ?chordProgressionInSimilarityBIRI .
 
     # HarmonicSimilarity
     ?harmonicSimIRI a cm:HarmonicSimilarity ;
@@ -46,13 +46,13 @@ CONSTRUCT {
                     cm:harmSimInvolvesRecording ?recordingBIRI .
     
     ?chordProgressionInSimilarityAIRI a cm:ChordProgressionInSimilarity ;
-                                    cm:isChordProgressioninHarmSim ?harmonicSimIRI ;
+                                    cm:isChordProgressionInHarmSim ?harmonicSimIRI ;
                                     core:hasTimeInterval ?timeIntervalAIRI;
                                     cm:aboutChordProgression ?chordProgressionAIRI;
                                     cm:CPSimInvolvesRecording ?recordingAIRI .
 
     ?chordProgressionInSimilarityBIRI a cm:ChordProgressionInSimilarity ;
-                                    cm:isChordProgressioninHarmSim ?harmonicSimIRI ;
+                                    cm:isChordProgressionInHarmSim ?harmonicSimIRI ;
                                     core:hasTimeInterval ?timeIntervalBIRI;
                                     cm:aboutChordProgression ?chordProgressionBIRI;
                                     cm:CPSimInvolvesRecording ?recordingBIRI .
@@ -104,7 +104,7 @@ CONSTRUCT {
     BIND(IRI(CONCAT( STR(pr:) , "Recording/", ENCODE_FOR_URI(?recordingBid))) AS ?recordingBIRI)
     BIND(IRI(CONCAT( STR(pr:) , "ChordProgression/", ENCODE_FOR_URI(?recordingAid), "_", ENCODE_FOR_URI(?chordProgressionAid))) AS ?chordProgressionAIRI)
     BIND(IRI(CONCAT( STR(pr:) , "ChordProgression/", ENCODE_FOR_URI(?recordingBid), "_", ENCODE_FOR_URI(?chordProgressionBid))) AS ?chordProgressionBIRI)
-    BIND(IRI(CONCAT( STR(pr:) , "HarmonicSimilarity/harm_sim_", ENCODE_FOR_URI(?recordingAid), "_", ENCODE_FOR_URI(?recordingBid))) AS ?harmonicSimIRI)
+    BIND(IRI(CONCAT( STR(pr:) , "HarmonicSimilarity/harm_sim_", ENCODE_FOR_URI(?recordingAid), "_", ENCODE_FOR_URI(?recordingBid), "_", ENCODE_FOR_URI(?cpMatchId))) AS ?harmonicSimIRI)
     BIND(IRI(CONCAT( STR(pr:) , "TimeInterval/", ENCODE_FOR_URI(?beginCPA), "_", ENCODE_FOR_URI(?endCPA))) AS ?timeIntervalAIRI)
     BIND(IRI(CONCAT( STR(pr:) , "TimeInterval/", ENCODE_FOR_URI(?beginCPB), "_", ENCODE_FOR_URI(?endCPB))) AS ?timeIntervalBIRI)
     BIND(IRI(CONCAT( STR(pr:) , "ChordProgressionInSimilarity/", ENCODE_FOR_URI(?chordProgressionAid), "_", ENCODE_FOR_URI(?beginCPA), "_", ENCODE_FOR_URI(?endCPA))) AS ?chordProgressionInSimilarityAIRI)
