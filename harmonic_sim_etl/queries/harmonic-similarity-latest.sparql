@@ -52,12 +52,14 @@ CONSTRUCT {
 
     # ChordProgression
     ?chordProgressionAIRI   a mf:ChordProgression ;
+                    rdfs:label ?cProgrA ;
                     mf:isChordProgressionOf ?recordingAIRI ;
                     cm:hasSimilarChordProgression ?chordProgressionBIRI ;
                     cm:isChordProgressioninCPSim ?chordProgressionInSimilarityAIRI .
 
 
     ?chordProgressionBIRI   a mf:ChordProgression ;
+                    rdfs:label ?cProgrB ;
                     mf:isChordProgressionOf ?recordingBIRI ;
                     cm:hasSimilarChordProgression ?chordProgressionAIRI ;
                     cm:isChordProgressioninCPSim ?chordProgressionInSimilarityBIRI .
@@ -98,7 +100,7 @@ CONSTRUCT {
 
     SERVICE <x-sparql-anything:> {
 
-        fx:properties fx:location "data/harmonic_similarity_v5.json"  ;
+        fx:properties fx:location "data/harmonic_similarity_v6.json"  ;
         fx:media-type "application/json" ;
         fx:blank-nodes false    .
 
@@ -114,11 +116,13 @@ CONSTRUCT {
                     xyz:cpaB ?chordProgressionB .
 
             ?chordProgressionA xyz:id ?chordProgressionAid ;
+                            xyz:cProgr ?cProgrA ;
                             xyz:start ?beginCPA ;
                             xyz:end ?endCPA .
 
 
             ?chordProgressionB xyz:id ?chordProgressionBid ;
+                            xyz:cProgr ?cProgrB ;
                             xyz:start ?beginCPB ;
                             xyz:end ?endCPB .
             
