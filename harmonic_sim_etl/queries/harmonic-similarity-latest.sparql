@@ -55,14 +55,14 @@ CONSTRUCT {
                     rdfs:label ?cProgrA ;
                     mf:isChordProgressionOf ?recordingAIRI ;
                     cm:hasSimilarChordProgression ?chordProgressionBIRI ;
-                    cm:isChordProgressioninCPSim ?chordProgressionInSimilarityAIRI .
+                    cm:isChordProgressionInCPSim ?chordProgressionInSimilarityAIRI .
 
 
     ?chordProgressionBIRI   a mf:ChordProgression ;
                     rdfs:label ?cProgrB ;
                     mf:isChordProgressionOf ?recordingBIRI ;
                     cm:hasSimilarChordProgression ?chordProgressionAIRI ;
-                    cm:isChordProgressioninCPSim ?chordProgressionInSimilarityBIRI .
+                    cm:isChordProgressionInCPSim ?chordProgressionInSimilarityBIRI .
 
     # HarmonicSimilarity
     ?harmonicSimIRI a cm:HarmonicSimilarity ;
@@ -74,13 +74,13 @@ CONSTRUCT {
 
     
     ?chordProgressionInSimilarityAIRI a cm:ChordProgressionInSimilarity ;
-                                    cm:isChordProgressioninHarmSim ?harmonicSimIRI ;
+                                    cm:isChordProgressionInHarmSim ?harmonicSimIRI ;
                                     core:hasTimeInterval ?timeIntervalAIRI;
                                     cm:aboutChordProgression ?chordProgressionAIRI;
                                     cm:CPSimInvolvesRecording ?recordingAIRI .
 
     ?chordProgressionInSimilarityBIRI a cm:ChordProgressionInSimilarity ;
-                                    cm:isChordProgressioninHarmSim ?harmonicSimIRI ;
+                                    cm:isChordProgressionInHarmSim ?harmonicSimIRI ;
                                     core:hasTimeInterval ?timeIntervalBIRI;
                                     cm:aboutChordProgression ?chordProgressionBIRI;
                                     cm:CPSimInvolvesRecording ?recordingBIRI .
