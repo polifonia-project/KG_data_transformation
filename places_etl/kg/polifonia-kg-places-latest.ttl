@@ -255,6 +255,7 @@
 
 <https://w3id.org/polifonia/resource/Recording/schubert-winterreise_123>
         a                               mp:Recording ;
+        core:hasYoutubeID               "VlepuNi0000" ;
         core:hasArtistBirthPlace        <https://w3id.org/polifonia/resource/Country/GB> , <https://w3id.org/polifonia/resource/Country/DE> ;
         core:hasArtistStartCareerPlace  <https://w3id.org/polifonia/resource/Place/Hildesheim> ;
         core:hasPlace                   <https://w3id.org/polifonia/resource/Country/DE> , <https://w3id.org/polifonia/resource/Place/Hildesheim> , <https://w3id.org/polifonia/resource/Country/GB> ;
@@ -1366,6 +1367,7 @@
 
 <https://w3id.org/polifonia/resource/Recording/jaah_50>
         a                               mp:Recording ;
+        core:hasYoutubeID               "VlepuNi0000" ;
         core:hasArtistBirthPlace        <https://w3id.org/polifonia/resource/Country/US> ;
         core:hasArtistStartCareerPlace  <https://w3id.org/polifonia/resource/Place/Newport%20News> ;
         core:hasPlace                   <https://w3id.org/polifonia/resource/Place/Newport%20News> , <https://w3id.org/polifonia/resource/Country/US> ;
@@ -4315,6 +4317,7 @@
 
 <https://w3id.org/polifonia/resource/Recording/schubert-winterreise_13>
         a                               mp:Recording ;
+        core:hasYoutubeID               "VlepuNi0000" ;
         core:hasArtistBirthPlace        <https://w3id.org/polifonia/resource/Country/GB> , <https://w3id.org/polifonia/resource/Country/DE> ;
         core:hasArtistStartCareerPlace  <https://w3id.org/polifonia/resource/Place/Hildesheim> ;
         core:hasPlace                   <https://w3id.org/polifonia/resource/Country/GB> , <https://w3id.org/polifonia/resource/Country/DE> , <https://w3id.org/polifonia/resource/Place/Hildesheim> ;
@@ -5334,6 +5337,7 @@
 
 <https://w3id.org/polifonia/resource/Recording/schubert-winterreise_100>
         a                               mp:Recording ;
+        core:hasYoutubeID               "VlepuNi0000" ;
         core:hasArtistBirthPlace        <https://w3id.org/polifonia/resource/Country/DE> , <https://w3id.org/polifonia/resource/Country/GB> ;
         core:hasArtistStartCareerPlace  <https://w3id.org/polifonia/resource/Place/Hildesheim> ;
         core:hasPlace                   <https://w3id.org/polifonia/resource/Country/DE> , <https://w3id.org/polifonia/resource/Country/GB> , <https://w3id.org/polifonia/resource/Place/Hildesheim> ;
@@ -5447,6 +5451,7 @@
 
 <https://w3id.org/polifonia/resource/Recording/schubert-winterreise_126>
         a                               mp:Recording ;
+        core:hasYoutubeID               "o0oRxVIv7oI" ;
         core:hasArtistBirthPlace        <https://w3id.org/polifonia/resource/Country/DE> , <https://w3id.org/polifonia/resource/Country/GB> ;
         core:hasArtistStartCareerPlace  <https://w3id.org/polifonia/resource/Place/Hildesheim> ;
         core:hasPlace                   <https://w3id.org/polifonia/resource/Country/DE> , <https://w3id.org/polifonia/resource/Place/Hildesheim> , <https://w3id.org/polifonia/resource/Country/GB> ;
@@ -6566,6 +6571,7 @@
 
 <https://w3id.org/polifonia/resource/Recording/jaah_79>
         a                               mp:Recording ;
+        core:hasYoutubeID               "VlepuNi0000" ;
         core:hasArtistBirthPlace        <https://w3id.org/polifonia/resource/Country/US> ;
         core:hasArtistStartCareerPlace  <https://w3id.org/polifonia/resource/Place/Bonham> ;
         core:hasPlace                   <https://w3id.org/polifonia/resource/Place/Bonham> , <https://w3id.org/polifonia/resource/Country/US> ;
@@ -6979,6 +6985,7 @@
 
 <https://w3id.org/polifonia/resource/Recording/jaah_87>
         a                               mp:Recording ;
+        core:hasYoutubeID               "VlepuNi40M8" ;
         core:hasArtistBirthPlace        <https://w3id.org/polifonia/resource/Country/US> ;
         core:hasArtistStartCareerPlace  <https://w3id.org/polifonia/resource/Place/Tampa> ;
         core:hasPlace                   <https://w3id.org/polifonia/resource/Place/Tampa> , <https://w3id.org/polifonia/resource/Country/US> ;
@@ -7850,6 +7857,7 @@
 
 <https://w3id.org/polifonia/resource/Recording/jaah_15>
         a                         mp:Recording ;
+        core:hasYoutubeID         "VlepuNi0000" ;
         core:hasArtistBirthPlace  <https://w3id.org/polifonia/resource/Country/US> ;
         core:hasPlace             <https://w3id.org/polifonia/resource/Country/US> ;
         core:hasTitle             <https://w3id.org/polifonia/resource/Title/swing_that_music> ;
@@ -8147,6 +8155,7 @@
 
 <https://w3id.org/polifonia/resource/Recording/schubert-winterreise_112>
         a                               mp:Recording ;
+        core:hasYoutubeID               "VlepuNi0000" ;
         core:hasArtistBirthPlace        <https://w3id.org/polifonia/resource/Country/DE> , <https://w3id.org/polifonia/resource/Country/GB> ;
         core:hasArtistStartCareerPlace  <https://w3id.org/polifonia/resource/Place/Hildesheim> ;
         core:hasPlace                   <https://w3id.org/polifonia/resource/Country/GB> , <https://w3id.org/polifonia/resource/Place/Hildesheim> , <https://w3id.org/polifonia/resource/Country/DE> ;
@@ -8564,6 +8573,7 @@
 
 <https://w3id.org/polifonia/resource/Recording/jaah_7>
         a                         mp:Recording ;
+        core:hasYoutubeID         "VlepuNi0000" ;
         core:hasArtistBirthPlace  <https://w3id.org/polifonia/resource/Country/US> ;
         core:hasPlace             <https://w3id.org/polifonia/resource/Country/US> ;
         core:hasTitle             <https://w3id.org/polifonia/resource/Title/moten_swing> ;
@@ -8733,6 +8743,7 @@
 
 <https://w3id.org/polifonia/resource/Recording/jaah_31>
         a                               mp:Recording ;
+        core:hasYoutubeID               "VlepuNi0000" ;
         core:hasArtistBirthPlace        <https://w3id.org/polifonia/resource/Country/US> ;
         core:hasArtistStartCareerPlace  <https://w3id.org/polifonia/resource/Place/Newark> ;
         core:hasPlace                   <https://w3id.org/polifonia/resource/Place/Newark> , <https://w3id.org/polifonia/resource/Country/US> ;
@@ -9733,6 +9744,7 @@
 
 <https://w3id.org/polifonia/resource/Recording/schubert-winterreise_11>
         a                               mp:Recording ;
+        core:hasYoutubeID               "VlepuNi0000" ;
         core:hasArtistBirthPlace        <https://w3id.org/polifonia/resource/Country/GB> , <https://w3id.org/polifonia/resource/Country/DE> ;
         core:hasArtistStartCareerPlace  <https://w3id.org/polifonia/resource/Place/Hildesheim> ;
         core:hasPlace                   <https://w3id.org/polifonia/resource/Place/Hildesheim> , <https://w3id.org/polifonia/resource/Country/GB> , <https://w3id.org/polifonia/resource/Country/DE> ;
